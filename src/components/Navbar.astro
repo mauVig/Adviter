@@ -1,0 +1,37 @@
+---
+import logo from '../assets/logo.png';
+---
+
+<div class="w-full fixed top-0 flex justify-center">   
+  <nav class="max-w-screen-2xl mx-auto w-full flex justify-between p-2">
+    <div class="flex items-center h-8 text-textGray text-xl">
+        <img src={logo.src} alt="Logo" class="h-5" />
+        <p class="text-xl ml-[2px] font-bold">Adviter</p>
+    </div>
+    <div class="flex items-center h-8 gap-[3px]">
+      <div class="flex items-center ">
+        <buttom
+            class='h-[1.6rem] pl-4 pr-8 bottom-4 max-w-fit rounded-[.2rem] text-textGray bg-AdBlue'
+        >
+            <span class="text-xs">CONTACT US</span>
+        </buttom>
+      </div>
+      <label class="bg-AdBlue rounded-[.2rem] peer-checked:bg-none relative z-40">
+        <div
+          class="w-8 h-[1.6rem] cursor-pointer flex flex-col items-center justify-center "
+        >
+          <input class="hidden peer" type="checkbox" />
+          <div
+            class="w-[50%] h-[1px] bg-textGray rounded-sm transition-all duration-300 origin-left  translate-y-[0.35rem] peer-checked:rotate-[-45deg] peer-checked:translate-x-[2.5px] peer-checked:w-[45%]"
+          ></div>
+          <div
+            class="w-[50%] h-[1px] bg-textGray rounded-md transition-all duration-300 origin-center peer-checked:hidden"
+          ></div>
+          <div
+            class="w-[50%] h-[1px] bg-textGray rounded-md transition-all duration-300 origin-left -translate-y-[0.35rem] peer-checked:rotate-[45deg] peer-checked:translate-x-[2.5px] peer-checked:w-[45%]"
+          ></div>
+        </div>
+      </label>
+    </div>
+  </nav>
+</div>
