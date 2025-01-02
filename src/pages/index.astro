@@ -3,7 +3,7 @@ import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar'
 import WeAre from '../components/WeAre.astro'
-import Projects from '../components/Projects/Projects.astro'
+import Projects from '../components/Projects/Projects.tsx'
 
 
 ---
@@ -12,13 +12,5 @@ import Projects from '../components/Projects/Projects.astro'
 	<Navbar />
 	<Welcome />
 	<WeAre />
-	<Projects />
-	<!-- <Box1 />
-	<Box2 />
-	<Box3 /> -->
+	<Projects client:only/>
 </Layout>
-
-<style>
-  /* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap'); */
- 
-</style>
