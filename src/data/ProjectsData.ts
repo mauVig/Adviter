@@ -24,7 +24,7 @@ export const dataProject: Project[] = [
     },
     {
         id:3,
-        title:'Mater Dei',
+        title:'Mater\nDei',
         maker:'Cloud, Integrations\nProduct Design,\nDev, UX/UI,',
         urlImg:'/projects/img/Mater.png',
         urlMarks:'/projects/marks/Meter.png',
@@ -46,7 +46,7 @@ export const dataProject: Project[] = [
     {
         id:6,
         title:'Gasnor',
-        maker:'Web/Mobile app Dev,\nCloud Solution/Scalability,\nBusiness Integration,\nProduct Design,\nCyberSecurity',
+        maker:'Cloud Solution/Scalability,\nWeb/Mobile app Dev,\nBusiness Integration,\nProduct Design,\nCyberSecurity',
         urlImg:'/projects/img/Gasnor.jpg',
         urlMarks:'/projects/marks/Gasnor.png',
     },
