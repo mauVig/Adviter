@@ -85,3 +85,32 @@ export const marksOfClients:MarkOf[] = [
         img: '/projects/marks/Volkswagen.png',
     }  
 ]
+
+
+export const marksOfClients2:MarkOf[] = [
+    {
+        id: 1,
+        img: '/partners/aws.png',
+    },
+    {
+        id: 2,
+        img: '/partners/cessi.png',
+    },
+    {
+        id: 3,
+        img: '/partners/googleCloud.png',
+    },
+    {
+        id: 4,
+        img: '/partners/microsoft.png',
+    },
+    {
+        id: 5,
+        img: '/partners/poloIt.png',
+    },
+    {
+        id: 6,
+        img: '/partners/texas.png',
+    },
+
+] 
