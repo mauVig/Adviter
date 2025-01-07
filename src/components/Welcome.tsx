@@ -1,8 +1,7 @@
-import React from 'react';
 
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 
-import st from '@/styles/Welcome.module.css';
+import st from '@/styles/Welcome.module.css'
 
 const Welcome: React.FC = () => {
   const CSSEffect = 70

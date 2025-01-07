@@ -1,21 +1,61 @@
 ---
-import { aboutData } from '../data/About.ts';
+import { aboutData } from '../data/About';
 
+const isMobile = `
+ function getStyles(data) {
+   if (window.innerWidth <= 1024) {
+     return {
+       backgroundColor: data.back,
+       color: data.color
+     };
+   }
+   return {};
+ }
+`;
 ---
 
-<div class="bg-textGray pt-[15rem] ">
-    {aboutData.map((data) => (
-       <div class='p-10' style={`background-color: ${data.back}; color: ${data.color};`}>
-         <div class="grid grid-cols-4  gap-10 pt-2">
-             <h2 class="text-xl font-semibold col-span-2 ">{data.title}</h2>
-             <div class="col-span-2">
-               <img src={data.imgUrl} alt={`Pickture about ${data.title}`} class=""/>
-               <div class="w-16 border-2 backArrow border-textGray rounded-3xl flex items-center justify-center px-4 py-2">
-                <img src="/svg/Arrow.svg" alt="Arrow to right" class='fill-red'/>
-              </div>
-             </div>
-             <p class="text-xs hidden">{data.description}</p>
+<div class="bg-textGray pt-[15rem]">
+ {aboutData.map((data) => (
+   <div class='p-10 lg:hover:bg-AdDarkBlue hover-text-change lg:hover:cursor-pointer' id={`about-${data.title}`}>
+     <div class="grid grid-cols-4 gap-10 pt-2 max-w-screen-lg mx-auto">
+       <h2 class="text-xl lg:text-textBlack lg:text-2xl pr-24 font-semibold col-span-2">{data.title}</h2>
+       <div class="col-span-2 lg:col-span-1">
+         <img src={data.imgUrl} alt={`Pickture about ${data.title}`} class="-translate-y-24 w-72"/>
+         <div class="w-16 border-2 backArrow border-textGray rounded-3xl flex items-center justify-center px-4 py-2 lg:-translate-y-24 ">
+           <img src="/svg/Arrow.svg" alt="Arrow to right" />
          </div>
        </div>
-    ))}
+
+       <p class="text-xs hidden lg:block lg:text-lg lg:leading-6 ">{data.description}</p>
+
+     </div>
+   </div>
+ ))}
 </div>
+
+<script define:vars={{ aboutData, isMobile }}>
+ eval(isMobile);
+ 
+ aboutData.forEach(data => {
+   const element = document.getElementById(`about-${data.title}`);
+   if (element) {
+     Object.assign(element.style, getStyles(data));
+   }
+ });
+
+ window.addEventListener('resize', () => {
+   aboutData.forEach(data => {
+     const element = document.getElementById(`about-${data.title}`);
+     if (element) {
+       Object.assign(element.style, getStyles(data));
+     }
+   });
+ });
+</script>
+
+<style>
+  @media( width > 1023px) {
+    .hover-text-change:hover * {
+      color: #ededed !important;
+    }
+  }
