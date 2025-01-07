@@ -1,6 +1,6 @@
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { marksOfClients } from '../data/MarksOfClients'
+import { marksOfClients } from '@/data/MarksOfClients'
 
 
 

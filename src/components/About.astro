@@ -1,5 +1,6 @@
 ---
 import { aboutData } from '../data/About.ts';
+
 ---
 
 <div class="bg-textGray pt-[15rem] ">
@@ -9,9 +10,9 @@ import { aboutData } from '../data/About.ts';
              <h2 class="text-xl font-semibold col-span-2 ">{data.title}</h2>
              <div class="col-span-2">
                <img src={data.imgUrl} alt={`Pickture about ${data.title}`} class=""/>
-               {/* <div class="w-16 border-2 backArrow border-textGray rounded-3xl flex items-center justify-center px-4 py-2">
+               <div class="w-16 border-2 backArrow border-textGray rounded-3xl flex items-center justify-center px-4 py-2">
                 <img src="/svg/Arrow.svg" alt="Arrow to right" class='fill-red'/>
-              </div> */}
+              </div>
              </div>
              <p class="text-xs hidden">{data.description}</p>
          </div>

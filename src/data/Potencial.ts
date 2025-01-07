@@ -12,7 +12,7 @@ export const Potencial: PotencialTs[] = [
         id: 1,
         title: 'Quality Engineering',
         logoUrl: '/potencial/Qe.svg',
-        gridStyle: 'sm:mx-auto sm:col-span-2'
+        gridStyle: 'sm:mx-auto sm:col-span-2 lg:col-span-1'
     },
     {
         id: 2,
@@ -36,7 +36,7 @@ export const Potencial: PotencialTs[] = [
         id: 5,
         title: 'Web & Mobile App Dev',
         logoUrl: '/potencial/Wb.svg',
-        gridStyle: 'sm:mx-auto '
+        gridStyle: 'sm:mx-auto lg:-ml-28'
     },
     {
         id: 6,
@@ -48,12 +48,12 @@ export const Potencial: PotencialTs[] = [
         id: 7,
         title: 'Cloud solution / Scalabitiy',
         logoUrl: '/potencial/Clou.svg',
-        gridStyle: 'sm:mx-auto sm:col-span-2'
+        gridStyle: 'sm:mx-auto sm:col-span-2 lg:col-span-1'
     },
     {
         id: 8,
         title: 'UX/Ui',
         logoUrl: '/potencial/UXUI.svg',
-        gridStyle: 'sm:mx-auto sm:col-span-2'
+        gridStyle: 'sm:mx-auto sm:col-span-2 lg:col-span-1'
     }
 ];

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { marksOfClients2 } from '../data/MarksOfClients'
+import { marksOfClients2 } from '@/data/MarksOfClients'
 
 const SlideMarks2:React.FC = () => {
     return (

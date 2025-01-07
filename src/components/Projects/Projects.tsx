@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import GridProject from './GridProject';
-import SlideProject from './SlideProject';
-import { dataProject } from '../../data/ProjectsData';
+import GridProject from '@/components/Projects/GridProject';
+import SlideProject from '@/components/Projects/SlideProject';
+import { dataProject } from '@/data/ProjectsData';
 
 const Projects: React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);

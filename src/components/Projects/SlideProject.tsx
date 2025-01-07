@@ -1,14 +1,13 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
 import { useState } from 'react';
 
 import type { Swiper as SwiperType } from 'swiper';
-import type { Project } from '../../data/ProjectsData';
+import type { Project } from '@/data/ProjectsData';
 
 import 'swiper/css';
-import '../../styles/swiper.css';
-import '../../styles/AppearTextInProject.css'
+import '@/styles/swiper.css';
+import '@/styles/AppearTextInProject.css'
 
 interface SlideProjectProps {
   dataProject: Project[];
@@ -26,12 +25,6 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
         centeredSlides={true}
         slidesPerView={window.innerWidth < 576 ? 1.3 : 2}
         loop={true}
-        // speed={1200}
-        // autoplay={{
-        //   delay: 2500,
-        //   disableOnInteraction: false,
-        // }}
-        // modules={[Autoplay]}
         onSlideChange={handleSlideChange}
         className="mySwiper min-h-[680px]"
       >
