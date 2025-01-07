@@ -22,7 +22,7 @@ const Projects: React.FC = () => {
             <h2 className="text-AdBlue font-semibold text-center pt-[32rem] leading-4">Some of <br />our projects</h2>
             <p className="text-center text-4xl font-medium leading-8 mt-4">Effective <br /> solutions</p>
             <div className="projects-list pb-32">
-                {isMobile ? <SlideProject dataProject={dataProject} /> : <GridProject />}
+                {isMobile ? <SlideProject dataProject={dataProject} /> : <GridProject dataProject={dataProject}  />}
             </div>
         </section>
     );
