@@ -1,0 +1,63 @@
+---
+
+---
+
+<div
+  class='min-h-screen px-10 w-full backCareers flex flex-col items-center justify-center text-textGray'
+>
+ <div class="">
+   <div
+     class='p-12 border-2 border-AdBlue preTitle bg-opacity-55 relative z-10'
+   >
+     <h2 class='text-5xl -pl-[3px]'>
+       Grow your career at the heart of change It's your time to shine.
+     </h2>
+     <p class='text-2xl mt-1'>Bring your ingenuity, curiosity and big ideas.</p>
+   </div>
+   <div class='w-full text-textGray relative z-10 mt-4 grid grid-col-8'>
+     <div class='col-start-8 flex justify-end items-center'>
+       <p class="text-xl mr-6">Join us</p>
+       <div class="w-16 border-2 backArrow border-textGray rounded-3xl flex items-center justify-center px-4 py-2">
+         <img src="/svg/Arrow.svg" alt="Arrow to right" />
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
+
+<style>
+  .backCareers {
+    background-image: url('/CareersImg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  .backCareers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .preTitle{
+  
+  }
+  .preTitle::before {
+    content: 'Careers';
+    position: absolute;
+    top: -5rem;
+    left: 0;
+    font-size: 1.25rem;
+    line-height: 1.75rem ;
+    color: #0078ff;
+    border: 1px solid #0078ff;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+  }
+  .preTitle:hover .backArrow {
+    background: #ededed;
+    cursor: pointer;
+  }
+</style>

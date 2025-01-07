@@ -1,0 +1,64 @@
+---
+const { title, logoUrl, gridStyle } = Astro.props
+---
+
+<div class={`flex my-2  ${gridStyle}`}> 
+    <div class="w-20 border-[.5px] rounded-md flex justify-center items-center">
+        <img src={logoUrl} class="p-2">
+    </div>
+    <div class="border-[.5px] rounded-md flex justify-center items-center h-16 text-xl font-medium px-6 appearTitle">
+        <div>
+            <h3 class="truncate">{title}</h3>
+        </div>
+    </div>
+</div>
+
+<!-- <script>
+    import gsap from 'gsap';
+    import ScrollTrigger from 'gsap/ScrollTrigger';
+   
+    window.addEventListener('load', () => {
+      gsap.registerPlugin(ScrollTrigger);
+   
+      // Selecciona todos los elementos appearTitle
+        gsap.fromTo('.appearTitle',
+          {
+            width: '0%',
+            opacity: 0,
+          },
+          {
+            width: '100%',
+            opacity: 1,
+            duration: 1,
+            scrollTrigger: {
+              trigger: '.appearTitle',
+              start: 'top bottom-=80',
+              end: 'bottom top',
+              toggleActions: 'play reverse play reverse',
+              markers: true
+            }
+          }
+        );
+      });
+   </script> -->
+   
+   <style>
+    .appearTitle {
+      width: 100%;
+      overflow: hidden;
+    }
+   </style>
+   
+   <style>
+    .appearTitle {
+      width: 100%;
+      overflow: hidden;
+    }
+   </style>
+
+<style>
+    .appearTitle {
+      width: 100%;
+      overflow: hidden;
+    }
+  </style>

@@ -1,16 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Welcome from '../components/Welcome.tsx';
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.tsx'
-import WeAre from '../components/WeAre.astro'
-import Projects from '../components/Projects/Projects.tsx'
-
-
+import ChangeBack from '../components/ChangeBack.astro';
+import Potencial from '../components/Potencial.astro';
+import About from '../components/About.astro';
+import SlideMarks2 from '../components/SlideMarks2.tsx';
+import Careers from '../components/Careers.astro';
+import SlideMarksAll from '../components/SlideMarksAll';
 ---
 
 <Layout title='Adviter'>
-	<Navbar/>
-	<Welcome />
-	<WeAre />
-	<Projects client:only/>
+	<Navbar />
+	<Welcome client:only/>
+	<ChangeBack client:load/>
+	<!-- <WeAre />
+		<Projects client:only/> -->
+		<SlideMarksAll client:only/>
+	<Potencial />
+	<About />
+	<SlideMarks2 client:only/>
+	<Careers />
+
 </Layout>

@@ -1,7 +1,7 @@
 
 
 
-const GridProject = () => {
+const GridProject: React.FC = () => {
     return (
         <div className="grid grid-cols-3 gap-4">
             <div className="project-card">

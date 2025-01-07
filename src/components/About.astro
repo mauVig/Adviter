@@ -1,0 +1,14 @@
+---
+import { aboutData } from '../data/About.ts';
+---
+
+<div class="bg-textGray py-[15rem]">
+    {aboutData.map((data) => (
+        <div class="grid grid-cols-4">
+            <h2>{data.title}</h2>
+            <img src={data.imgUrl} alt={`Pickture about ${data.title}`} />
+            <p>{data.description}</p>
+        </div>
+    ))}
+    
+</div>

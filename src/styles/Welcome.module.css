@@ -1,0 +1,10 @@
+.back{
+    background: url('../assets/icons/back-cell-04.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ededed;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1;
+}
