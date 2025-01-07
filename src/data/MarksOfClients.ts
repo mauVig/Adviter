@@ -1,5 +1,9 @@
+interface MarkOf {
+    id: number;
+    img: string;
+}
 
-export const marksOfClients = [    
+export const marksOfClients:MarkOf[] = [    
     {
         id: 1,
         img: '/projects/marks/Supervielle.png',

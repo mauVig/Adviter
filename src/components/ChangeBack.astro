@@ -1,6 +1,6 @@
 ---
-import Projects from "./Projects/Projects";
-import SlideMarksAll from "./SlideMarksAll";
+import Projects from "./Projects/Projects.tsx";
+// import SlideMarksAll from "./SlideMarksAll";
 import WeAre from "./WeAre.astro";
 ---
 
@@ -15,8 +15,7 @@ import WeAre from "./WeAre.astro";
   import ScrollTrigger from 'gsap/ScrollTrigger';
 
 
-
-const isFirefox = typeof (window as any).InstallTrigger !== 'undefined';
+// const isFirefox = typeof (window as any).InstallTrigger !== 'undefined';
 // const isChrome = !!(window as any).chrome;
 // const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
@@ -25,8 +24,10 @@ window.addEventListener('load', () => {
 
     ScrollTrigger.create({
       trigger: '.change',
-      start: isFirefox ? '10%' : '50%',
-      end: isFirefox ? '15%': '60%',
+      // start: isFirefox ? '15%' : '25%',
+      // end: isFirefox ? '23%': '30%',
+      start: '15%',
+      end:  '23%',
       onUpdate: (self) => {
         const progress = self.progress;
         const color = gsap.utils.interpolate(
