@@ -2,7 +2,7 @@
 import Welcome from '@/components/Welcome.tsx';
 import Layout from '@/layouts/Layout.astro';
 import Navbar from '@/components/Navbar.tsx';
-import ChangeBack from '@/components/ChangeBack.tsx';
+import ChangeBack from '@/components/ChangeBack';
 import Potencial from '@/components/Potencial.astro';
 import About from '@/components/About.astro';
 import SlideMarks2 from '@/components/SlideMarks2.tsx';
@@ -15,8 +15,8 @@ import SlideMarksAll from '@/components/SlideMarksAll';
   <Navbar />
   <Welcome client:only />
   <ChangeBack client:only />
-  <!-- <WeAre />
-		<Projects client:only/> -->
+  <!--  <WeAre />
+		    <Projects client:only/> -->
   <SlideMarksAll client:only />
   <Potencial />
   <About />

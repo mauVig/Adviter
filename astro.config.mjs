@@ -11,5 +11,8 @@ export default defineConfig({
     resolve: {
       preserveSymlinks: true,
     },
+    ssr: {
+      noExternal: ['gsap'],
+    },
   },
 });
