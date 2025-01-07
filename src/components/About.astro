@@ -2,13 +2,14 @@
 import { aboutData } from '../data/About.ts';
 ---
 
-<div class="bg-textGray py-[15rem]">
+<div class="bg-textGray pt-[15rem] ">
     {aboutData.map((data) => (
-        <div class="grid grid-cols-4">
-            <h2>{data.title}</h2>
-            <img src={data.imgUrl} alt={`Pickture about ${data.title}`} />
-            <p>{data.description}</p>
-        </div>
+       <div class='p-10' style={`background-color: ${data.back}; color: ${data.color};`}>
+         <div class="grid grid-cols-4 gap-10 pt-2">
+             <h2 class="text-xl font-semibold col-span-2 ">{data.title}</h2>
+             <img src={data.imgUrl} alt={`Pickture about ${data.title}`} class="w-36"/>
+             <p class="text-xs">{data.description}</p>
+         </div>
+       </div>
     ))}
-    
 </div>

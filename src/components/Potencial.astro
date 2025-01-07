@@ -6,7 +6,7 @@ import PotencialCard from './PotencialCard.astro'
 <section  class="bg-[#3c3c3b] text-textGray py-[15rem] px-10">
     <h2 class="text-AdBlue font-semibold text-center ">Borderless capabilities</h2>
     <p class="text-center text-5xl font-medium mb-20">Unlock your<br />full potencial</p>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {PotencialData.map((pot) => (
            <PotencialCard {...pot} />
         ))}

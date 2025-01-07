@@ -20,11 +20,14 @@ const SlideMarksAll:React.FC = () => {
                   delay: 2500,
                   disableOnInteraction: false,
                 }}
+                spaceBetween={30}
                 modules={[Autoplay]}
             >
                 {marksOfClients.map((mark) => (
-                    <SwiperSlide key={mark.id} >
-                        <img src={mark.img} alt="mark" className='mx-auto' />
+                    <SwiperSlide key={mark.id}  className='flex items-center px-4 h-full'>
+                        <div>
+                            <img src={mark.img} alt="marks" className='h-[100px] object-contain' />
+                        </div>
                     </SwiperSlide>
                     ))
                 }
