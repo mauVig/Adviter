@@ -6,7 +6,7 @@ const Navbar: React.FC  = () => {
 
   return (
     <div className='w-full fixed top-0 flex justify-center z-[600]'>
-      <nav className='max-w-screen-lg mx-auto w-full flex justify-between p-2'>
+      <nav className='max-w-screen-lg mx-auto w-full flex justify-between py-2 px-2 lg:px-0'>
         <div className='flex items-center h-8 text-textGray text-xl'>
           <img src={logo.src} alt='Logo de Adviter' className='h-8' />
           <p className='text-3xl ml-[2px] font-bold text-[#ffff]'>Adviters</p>

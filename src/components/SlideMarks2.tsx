@@ -6,7 +6,9 @@ import { marksOfClients2 } from '@/data/MarksOfClients'
 const SlideMarks2:React.FC = () => {
     return (
         <div className='mx-auto py-32 '>
-            <h2 className='ml-10 text-AdBlue font-semibold leading-6 text-xl block'>Our <br />Partners</h2>
+            <div className=' max-w-screen-lg mx-auto '>
+                <h2 className=' text-AdBlue font-bold leading-6 text-xl block'>Our <br />Partners</h2>
+            </div>
             <div className=''>
                 <Swiper
                     // grabCursor={true}
@@ -24,7 +26,7 @@ const SlideMarks2:React.FC = () => {
                 >
                     {marksOfClients2.map((mark) => (
                         <SwiperSlide key={mark.id} >
-                            <img src={mark.img} alt="mark" className='h-[60px]  object-contain' />
+                            <img src={mark.img} alt="mark" className='h-[80px]  object-contain' />
                         </SwiperSlide>
                         ))
                     }

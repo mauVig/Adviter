@@ -26,7 +26,7 @@ const SlideMarksAll:React.FC = () => {
                 {marksOfClients.map((mark) => (
                     <SwiperSlide key={mark.id}  className='flex items-center h-full'>
                         <div>
-                            <img src={mark.img} alt="marks" className='h-[60px]  object-contain' />
+                            <img src={mark.img} alt="marks" className='h-[80px]  object-contain' />
                         </div>
                     </SwiperSlide>
                     ))

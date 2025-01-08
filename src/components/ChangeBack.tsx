@@ -25,12 +25,11 @@ const ChangeBack = () => {
             gsap.set('#myChange', { backgroundColor: color });
           },
           scrub: 0.5,
-          markers: false // Para debug, remueve en producción
+          markers: false 
         });
       }
     };
 
-    // Pequeño delay para asegurar que el DOM está listo
     setTimeout(initAnimation, 100);
 
     return () => {
@@ -41,10 +40,10 @@ const ChangeBack = () => {
   return (
     <div id="myChange" className="relative z-[1] bg-[#0078ff] min-h-[250vh]">
       <section className="text-textGray text-center text-5xl min-h-screen flex items-center px-10 font-bold max-w-screen-lg mx-auto">
-        <h2>
+        <h2 className='text-4xl md:text-5xl lg:text-6xl'>
           <span className="text-AdDarkBlue">We</span> are shaping the future through technology.
           We are pushing and challenging boundaries into the unknown, requiring both technical
-          skills and human abilities.
+          skills and human <br className='hidden lg:block' /> abilities.
         </h2>
       </section>
       <Projects />
