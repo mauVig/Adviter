@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Projects from "./Projects/Projects";
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';

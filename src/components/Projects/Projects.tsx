@@ -5,12 +5,13 @@ import { dataProject } from '@/data/ProjectsData';
 
 const Projects: React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
-
+    const md = 768;
+    
     useEffect(() => {
-        setIsMobile(window.innerWidth <= 768);
+        setIsMobile(window.innerWidth <= md);
         
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= md);
         };
 
         window.addEventListener('resize', handleResize);

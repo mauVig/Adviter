@@ -5,6 +5,7 @@ export interface Project {
     maker: string;
     urlImg: string;
     urlMarks: string;
+    pdf: string;
 }
 
 export const dataProject: Project[] = [
@@ -14,6 +15,7 @@ export const dataProject: Project[] = [
         maker:'Cloud,\nIntegrations,\nWeb,\nIA',
         urlImg:'/projects/img/Swiss.jpg',
         urlMarks:'/projects/marks/Swiss.png',
+        pdf:'/projects/pdf/SMG.pdf',
     },
     {
         id:2,
@@ -21,6 +23,7 @@ export const dataProject: Project[] = [
         maker:'Cloud Solution,\nBusiness Integration,\nWeb',
         urlImg:'/projects/img/Comafi.jpeg',
         urlMarks:'/projects/marks/Comafi.png',
+        pdf:'/projects/pdf/Comafi.pdf',
     },
     {
         id:3,
@@ -28,6 +31,7 @@ export const dataProject: Project[] = [
         maker:'Cloud, Integrations\nProduct Design,\nDev, UX/UI,',
         urlImg:'/projects/img/Mater.png',
         urlMarks:'/projects/marks/Meter.png',
+        pdf:'/projects/pdf/MATEDEI.pdf',
     },
     {
         id:4,
@@ -35,6 +39,7 @@ export const dataProject: Project[] = [
         maker:'Cloud Solution/ Scalability,\nBusiness Integration,\nCultural Hacking & Agility,\nWeb & Mobile App Dev,\nProduct Design,\nCybersecurity, \nUX/UI',
         urlImg:'/projects/img/Efecty.png',
         urlMarks:'/projects/marks/Efecty.png',
+        pdf:'/projects/pdf/EFECTY.pdf',
     },
     {
         id:5,
@@ -42,6 +47,7 @@ export const dataProject: Project[] = [
         maker:'Cloud, Data, Dev,\nUX/UI',
         urlImg:'/projects/img/Gador.jpg',
         urlMarks:'/projects/marks/Gador.png',
+        pdf:'/projects/pdf/GADOR.pdf',
     },
     {
         id:6,
@@ -49,6 +55,7 @@ export const dataProject: Project[] = [
         maker:'Cloud Solution/Scalability,\nWeb/Mobile app Dev,\nBusiness Integration,\nProduct Design,\nCyberSecurity',
         urlImg:'/projects/img/Gasnor.jpg',
         urlMarks:'/projects/marks/Gasnor.png',
+        pdf:'/projects/pdf/GASNOR.pdf',
     },
     {
         id:7,
@@ -56,6 +63,7 @@ export const dataProject: Project[] = [
         maker:'Web/Mobile app Dev,\nCloud Solution/Scalability\nBusiness Integration,\nCyberSecurity,\nProduct Design',
         urlImg:'/projects/img/Tgn.jpg',
         urlMarks:'/projects/marks/Tgn.png',
+        pdf:'/projects/pdf/TGN.pdf',
     },
     {
         id:8,
@@ -63,5 +71,6 @@ export const dataProject: Project[] = [
         maker:'Business Integration,\nCloud Solution,\nProduct Design,\nWeb',
         urlImg:'/projects/img/Ank.png',
         urlMarks:'/projects/marks/Ank.png',
+        pdf:'/projects/pdf/ANK.pdf',
     }
 ]
