@@ -50,7 +50,7 @@ export const marksOfClients:MarkOf[] = [
     },
     {
         id: 12,
-        img: '/projects/marks/MontesDelPlata.jpg',
+        img: '/projects/marks/MontesDelPlata.png',
     },
     {
         id: 13,

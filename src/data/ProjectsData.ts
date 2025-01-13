@@ -29,7 +29,7 @@ export const dataProject: Project[] = [
         id:3,
         title:'Mater\nDei',
         maker:'Cloud, Integrations\nProduct Design,\nDev, UX/UI,',
-        urlImg:'/projects/img/Mater.png',
+        urlImg:'/projects/img/Mater.jpg',
         urlMarks:'/projects/marks/Meter.png',
         pdf:'/projects/pdf/MATEDEI.pdf',
     },

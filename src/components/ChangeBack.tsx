@@ -1,18 +1,25 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, Fragment } from 'react';
 import Projects from "./Projects/Projects";
+import ArrowContainer from './ArrowContainer.tsx';
+import { generateRandomArrowConfigs } from './utiliti/resource.ts';
 
 const ChangeBack = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
-  
+  const [arrowConfigs, setArrowConfigs] = useState([]);
+
   const text = "We are shaping the future through technology. We are pushing and challenging boundaries into the unknown, requiring both technical skills and human abilities.";
   const words = text.split(' ');
 
   // Colores constantes
-  const START_COLOR = 'rgb(237, 237, 237)';  // Gris medio
+  const START_COLOR = 'rgb(237, 237, 237)'; 
   const END_COLOR = '#000755';
-  
+
+  useEffect(() => {
+    setArrowConfigs(generateRandomArrowConfigs());
+  }, []);
+
   useEffect(() => {
     const section = sectionRef.current;
     const container = containerRef.current;
@@ -37,7 +44,7 @@ const ChangeBack = () => {
       if (textRect.top <= windowHeight * 0.4) {
         textProgress = Math.min(
           1,
-          (windowHeight * 0.4 - textRect.top) / (windowHeight * 0.35)
+          (windowHeight * 0.4 - textRect.top) / (windowHeight * 0.60)
         );
       }
 
@@ -60,10 +67,9 @@ const ChangeBack = () => {
 
   // Función de color ajustada para mantener el color inicial
   const getWordColor = (word, index) => {
-    // Si es "we" (case insensitive), siempre retorna el color final
-    if (word.toLowerCase() === 'we') {
-      return END_COLOR;
-    }
+    // if (word.toLowerCase() === 'we') {
+    //   return END_COLOR;
+    // }
 
     // Para el resto de las palabras, comienza con el color inicial
     const wordProgress = Math.max(0, Math.min(1, (scrollProgress * (words.length + 5) - index) / 4));
@@ -90,15 +96,26 @@ const ChangeBack = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative z-[1] bg-[#0078ff] min-h-[250vh]"
+      className="relative min-h-[50vh] overflow-hidden"
     >
+      <div className="absolute top-0 -left-40  h-full">
+        {arrowConfigs.map((config, index) => (
+          <ArrowContainer 
+            key={index}
+            version={config.version}
+            top={config.top}
+          />
+        ))}
+      </div>
+
       <section 
         ref={sectionRef}
-        className="text-textGray text-center text-5xl min-h-screen flex items-center px-10 font-bold max-w-screen-lg mx-auto"
+        className="text-textGray text-center  min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10"
       >
-        <h2 className="text-4xl md:text-5xl lg:text-6xl">
+       
+        <h2 className="text-5xl md:text-6xl lg:text-7xl">
           {words.map((word, index) => (
-            <React.Fragment key={index}>
+            <Fragment key={index}>
               <span
                 className="transition-all duration-500 ease-out"
                 style={{ 
@@ -107,8 +124,8 @@ const ChangeBack = () => {
               >
                 {word}
               </span>
-              {' '}
-            </React.Fragment>
+              {' '} 
+            </Fragment>
           ))}
         </h2>
       </section>

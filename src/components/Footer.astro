@@ -1,5 +1,5 @@
 ---
-
+import { adIcons } from '@/data/icons.ts'
 ---
 
 <footer class='bg-AdBlue text-textBlack p-10'>
@@ -47,18 +47,19 @@
            <li>Linkedin</li>
          </a>
          <a href=''>
-           <li>Instagram</li>
-         </a>
+          <li>Instagram</li>
+        </a> <a href=''>
+          <li>Youtube</li>
+        </a>
          <a href='' class='block pt-6'>
            <li>info@adviters.com</li>
          </a>
        </ul>
      </div>
    </div>
-   <div class='sm:flex items-end justify-between mt-32'>
+   <div class='sm:flex items-end justify-between mt-12'>
      <div class='flex items-center'>
-       <img src='/footer/logoDark-07.svg' alt='' class='w-12' />
-       <p class='text-5xl ml-[2px] font-bold mar'>Adviters</p>
+       <img src={adIcons[3].src} alt='' class='h-12' />
      </div>
      <div class='flex mt-16 sm:justify-center items-end sm:items-center'>
        <img src='/footer/compliant.png' alt='Picture about HIPAA' class='h-12 scale-110' />

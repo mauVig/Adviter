@@ -9,18 +9,97 @@ import SlideMarks2 from '@/components/SlideMarks2.tsx';
 import Careers from '@/components/Careers.astro';
 import Footer from '@/components/Footer.astro';
 import SlideMarksAll from '@/components/SlideMarksAll';
+import { adIcons } from '@/data/icons';
+
+// Script que se ejecutará en el cliente
+const script = `
+  let currentIcon = ${JSON.stringify(adIcons[0])};
+  
+  function updateNavbarIcon() {
+    const welcomeElement = document.getElementById('welcome');
+    const potencialElement = document.getElementById('potencial');
+    const aboutElement = document.getElementById('about');
+    const careersElement = document.getElementById('careers');
+    
+    if (!welcomeElement || !potencialElement || !aboutElement || !careersElement) return;
+    
+    const welcomeRect = welcomeElement.getBoundingClientRect();
+    const potencialRect = potencialElement.getBoundingClientRect();
+    const aboutRect = aboutElement.getBoundingClientRect();
+    const careersRect = careersElement.getBoundingClientRect();
+    
+    const windowHeight = window.innerHeight;
+    const welcomeMidPoint = welcomeRect.top + (welcomeRect.height / 2);
+    
+    let newIcon;
+    
+    if (welcomeRect.top <= 0 && welcomeRect.bottom > 0) {
+      if (welcomeMidPoint <= windowHeight / 2) {
+        newIcon = ${JSON.stringify(adIcons[2])};
+      } else {
+        newIcon = ${JSON.stringify(adIcons[3])};
+      }
+    } else if (potencialRect.top <= 0 && potencialRect.bottom > 0) {
+      newIcon = ${JSON.stringify(adIcons[0])};
+    } else if (aboutRect.top <= 0 && aboutRect.bottom > 0) {
+      newIcon = ${JSON.stringify(adIcons[1])};
+    } else if (careersRect.top <= 0 && careersRect.bottom > 0) {
+      newIcon = ${JSON.stringify(adIcons[0])};
+    }
+    
+    if (newIcon && JSON.stringify(currentIcon) !== JSON.stringify(newIcon)) {
+      currentIcon = newIcon;
+      // Actualizar el componente React
+      window.updateNavbarIcon && window.updateNavbarIcon(currentIcon);
+    }
+  }
+  
+  window.addEventListener('scroll', updateNavbarIcon);
+  updateNavbarIcon(); // Ejecutar una vez al inicio
+`;
 ---
 
 <Layout title='Adviter'>
-  <Navbar />
-  <Welcome client:only />
+  <script define:vars={{ script }}>
+    // Agregar función al objeto window para que React pueda acceder a ella
+    {
+      const scriptElement = document.createElement('script');
+      scriptElement.textContent = script;
+      document.head.appendChild(scriptElement);
+    }
+  </script>
+  
+  <Navbar client:load currentIcon={adIcons[0]} />
+  
+  <div id="welcome">
+    <Welcome client:only />
+  </div>
   <ChangeBack client:only />
-  <!--  <WeAre />
-		    <Projects client:only/> -->
   <SlideMarksAll client:only />
-  <Potencial />
-  <About />
+  <div id="potencial">
+    <Potencial />
+  </div>
+  <div id="about">
+    <About />
+  </div>
   <SlideMarks2 client:only />
-  <Careers />
+  <div id="careers">
+    <Careers />
+  </div>
   <Footer />
 </Layout>
+
+<script>
+  // Extender la interfaz Window para incluir updateNavbarIcon
+  declare global {
+    interface Window {
+      updateNavbarIcon: (icon: any) => void;
+    }
+  }
+
+  // Script para conectar React con la lógica de scroll
+  window.updateNavbarIcon = (icon) => {
+    const event = new CustomEvent('updateIcon', { detail: icon });
+    window.dispatchEvent(event);
+  };
+</script>

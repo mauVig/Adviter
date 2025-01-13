@@ -7,7 +7,7 @@ const SlideMarks2:React.FC = () => {
     return (
         <div className='mx-auto py-32 '>
             <div className=' max-w-screen-lg mx-auto '>
-                <h2 className=' text-AdBlue text-center font-bold leading-9 text-5xl block'>Our <br />Partners</h2>
+                <h2 className=' text-AdBlue font-medium text-3xl text-center leading-6'>Our <br />Partners</h2>
             </div>
             <div>
                 <Swiper

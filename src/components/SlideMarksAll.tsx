@@ -8,7 +8,7 @@ const SlideMarksAll:React.FC = () => {
     
     return (
         <div className=' py-32'>
-            <h2 className='text-AdBlue font-medium text-2xl text-center leading-5'>Some of the clients <br /> who trusted us</h2>
+            <h2 className='text-AdBlue font-medium text-3xl text-center leading-6'>Some of the clients <br /> who trusted us</h2>
             <Swiper
                 // grabCursor={true}
                 slidesPerView={5}

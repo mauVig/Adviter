@@ -1,0 +1,25 @@
+.icon{
+    height: 2.5rem 
+}
+.us{
+    font-size: 1.125rem
+}
+
+@media (width < 530px) {
+    .icon{
+        height: 1.5rem;
+    }
+}
+
+
+@media (width < 410px) {
+    .icon{
+        height: 1.5rem;
+    }
+    .us{
+        height: 1rem;
+    }
+    .us{
+        font-size: .9rem
+    }
+}

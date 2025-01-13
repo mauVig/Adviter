@@ -7,7 +7,6 @@ import type { Project } from '@/data/ProjectsData';
 
 import 'swiper/css';
 import '@/styles/swiper.css';
-import '@/styles/AppearTextInProject.css'
 
 interface SlideProjectProps {
   dataProject: Project[];
@@ -31,23 +30,25 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
         {dataProject.map((projectOne, index) => (
           <SwiperSlide key={projectOne.id}  className='px-[.9rem]'>
             <div className="w-full relative">
-              {activeIndex === index && (
-                <div className="absolute top-4 left-0 bg-textGray appeaar">
-                  <img src={projectOne.urlMarks} alt={projectOne.title} className='h-10 px-4 py-1 rounded-2xl '/>
-                </div>
-              )}
               <img 
                 src={typeof projectOne.urlImg === 'string' ? projectOne.urlImg : ''} 
                 alt={`Picture of ${projectOne.title} client`} 
-                className='min-h-[520px] background-cover w-full h-full object-cover rounded-md'
+                className='min-h-[680px] background-cover w-full h-full object-cover rounded-md'
               />
             </div>
             {activeIndex === index && (
               <div className='flex justify-between items-start mt-2 gap-4 transition-opacity duration-300 ease-in-out'>
-                <h2 className='text-AdBlue text-xl whitespace-pre-line leading-[1.2rem] appeaar'>
-                  {projectOne.title}
-                </h2>
-                <p className='font-bold text-AdBlue text-xs block pt-2 whitespace-pre-line leading-[0.8rem] h-16 appeaar'>
+                <div className='flex flex-col items-start justify-start gap-2'>
+                  <img src={projectOne.urlMarks} alt={projectOne.title} className=' max-h-16  rounded-2xl mb-2'/>
+                  <a
+                  key={projectOne.id}
+                  href={projectOne.pdf} 
+                  target='_blank' 
+                  rel='noreferrer' 
+                  download
+                  className='bg-AdBlue text-textGray px-6 py-1 rounded-2xl'>Ver más</a>
+                </div>
+                <p className='font-bold text-AdBlue text-xs block pt-2 whitespace-pre-line leading-[0.8rem] h-16 '>
                   {projectOne.maker}
                 </p>
               </div>
