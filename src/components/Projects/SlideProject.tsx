@@ -18,14 +18,26 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
     const handleSlideChange = (swiper: SwiperType) => {
       setActiveIndex(swiper.realIndex);
     };
+    const preView = () => {
+      // return window.innerWidth < 576 ? 1.3 : 2
+      switch (true) {
+        case window.innerWidth < 576:
+          return 1.09;
+        case window.innerWidth < 768:
+          return 1.5;
+        default:
+          return 1.3;
+      }
+    }
+
     return (
         <Swiper
         grabCursor={true}
         centeredSlides={true}
-        slidesPerView={window.innerWidth < 576 ? 1.3 : 2}
+        slidesPerView={preView()}
         loop={true}
         onSlideChange={handleSlideChange}
-        className="mySwiper min-h-[680px]"
+        className="mySwiper "
       >
         {dataProject.map((projectOne, index) => (
           <SwiperSlide key={projectOne.id}  className='px-[.9rem]'>
@@ -33,7 +45,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
               <img 
                 src={typeof projectOne.urlImg === 'string' ? projectOne.urlImg : ''} 
                 alt={`Picture of ${projectOne.title} client`} 
-                className='min-h-[680px] background-cover w-full h-full object-cover rounded-md'
+                className='min-h-[680px] max-h-[680px] background-cover w-full h-full object-cover rounded-md'
               />
             </div>
             {activeIndex === index && (

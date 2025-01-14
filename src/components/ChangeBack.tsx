@@ -12,6 +12,7 @@ const ChangeBack = () => {
   const text = "We are shaping the future through technology. We are pushing and challenging boundaries into the unknown, requiring both technical skills and human abilities.";
   const words = text.split(' ');
 
+
   // Colores constantes
   const START_COLOR = 'rgb(237, 237, 237)'; 
   const END_COLOR = '#000755';
@@ -20,6 +21,7 @@ const ChangeBack = () => {
     setArrowConfigs(generateRandomArrowConfigs());
   }, []);
 
+    
   useEffect(() => {
     const section = sectionRef.current;
     const container = containerRef.current;
@@ -66,10 +68,7 @@ const ChangeBack = () => {
   }, []);
 
   // Función de color ajustada para mantener el color inicial
-  const getWordColor = (word, index) => {
-    // if (word.toLowerCase() === 'we') {
-    //   return END_COLOR;
-    // }
+  const getWordColor = (index) => {
 
     // Para el resto de las palabras, comienza con el color inicial
     const wordProgress = Math.max(0, Math.min(1, (scrollProgress * (words.length + 5) - index) / 4));
@@ -110,16 +109,15 @@ const ChangeBack = () => {
 
       <section 
         ref={sectionRef}
-        className="text-textGray text-center  min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10"
+        className="text-textGray text-center min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10 mb-64"
       >
-       
-        <h2 className="text-5xl md:text-6xl lg:text-7xl">
+        <h2 className="text-2xl  xs:text-3xl mid:text-4xl  md:text-5xl xl:text-6xl ">
           {words.map((word, index) => (
             <Fragment key={index}>
               <span
                 className="transition-all duration-500 ease-out"
                 style={{ 
-                  color: getWordColor(word, index)
+                  color: getWordColor(index)
                 }}
               >
                 {word}

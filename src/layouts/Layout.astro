@@ -13,16 +13,12 @@ const { title } = Astro.props;
     <meta name='viewport' content='width=device-width' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
-    <link 
-      rel="preload" 
-      href="/back-pc.jpg" 
-      as="image" 
-      type="image/jpg"
-    />
     <title>{title}</title>
     <style>
-      * {
-        font-family: 'Outfit', sans-serif;
+      @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+      *{
+        font-family: "Outfit", serif;
+        font-optical-sizing: auto;
       }
       html {
         scroll-behavior: smooth;

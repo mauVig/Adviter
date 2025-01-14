@@ -4,12 +4,12 @@ import { backArrows } from '@/data/icons.ts';
 
 const ArrowContainer = ({ version, top }) => {
   const [position, setPosition] = useState({ left: 0, direction: 'right' });
-  const [isVisible, setIsVisible] = useState(true);
+  // const [isVisible, setIsVisible] = useState(true);
   const speed = Math.random() * 10 + 5; 
 
   useEffect(() => {
     // Posición inicial aleatoria
-    const randomLeft = Math.random() * 100;
+    const randomLeft = 0;
     // Dirección aleatoria
     const randomDirection = Math.random() > 0.5 ? 'right' : 'left';
     setPosition({ left: randomLeft, direction: randomDirection });

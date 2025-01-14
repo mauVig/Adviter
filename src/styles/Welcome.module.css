@@ -1,4 +1,4 @@
-.back{
+/* .back{
     background: url('/back-cell-04.jpg');
     background-size: cover;
     background-position: center;
@@ -7,8 +7,8 @@
     min-height: 100vh;
     position: relative;
     z-index: -1;
-    animation: myMoves 14s infinite linear ;
-    -webkit-animation: myMoves 14s infinite linear ;
+    animation: myMoves var(--vel) infinite linear ;
+    -webkit-animation: myMoves var(--vel) infinite linear ;
 }
 
 @media (width > 1024px) {
@@ -34,6 +34,91 @@
     }
     50%{
         scale: 1.04;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+.opositeMove{
+    animation: opositeMoves var(--vel) infinite linear ;
+    -webkit-animation: opositeMoves var(--vel) infinite linear ;
+}
+
+@keyframes opositeMoves {
+    0% {
+        scale: .94;
+    }
+    50%{
+        scale: 1;
+    }
+    100% {
+        scale: .94;
+    }
+} */
+
+
+
+
+
+
+.back{
+    background: url('/back-cell-04.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #ededed;
+    min-height: 100vh;
+    position: relative;
+    z-index: -1;
+    animation: myMoves var(--vel) infinite   ease-in-out;
+    -webkit-animation: myMoves var(--vel) infinite ease-in-out ;
+}
+
+@media (width > 1024px) {
+    .back{
+        background: url('/back-pc.jpg');
+        background-size: cover;
+        position: relative;
+    }
+    .back::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+}
+
+:root{
+    --vel:10s
+}
+
+@keyframes myMoves {
+    0% {
+        scale: 1;
+    }
+    50%{
+        scale: 1.05;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+.opositeMove{
+    animation: opositeMoves var(--vel) infinite  ease-in-out;
+    -webkit-animation: opositeMoves var(--vel) infinite  ease-in-out;
+}
+
+@keyframes opositeMoves {
+    0% {
+        scale: 1;
+    }
+    50%{
+        scale: .95;
     }
     100% {
         scale: 1;
