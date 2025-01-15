@@ -31,7 +31,7 @@ export const dataProject: Project[] = [
         maker:'Cloud, Integrations\nProduct Design,\nDev, UX/UI,',
         urlImg:'/projects/img/Mater.jpg',
         urlMarks:'/projects/marks/Meter.png',
-        pdf:'/projects/pdf/MATEDEI.pdf',
+        pdf:'/projects/pdf/MATERDEI.pdf',
     },
     {
         id:4,

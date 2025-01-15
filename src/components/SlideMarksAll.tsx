@@ -3,9 +3,8 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';  
 import { marksOfClients } from '@/data/MarksOfClients'  
 
-// Definimos las constantes para las velocidades
-const FAST_SPEED = 600; // Velocidad rápida inicial (menor número = más rápido)
-const SLOW_SPEED = 2200; // Velocidad lenta cuando aparece el título
+const FAST_SPEED = 500;
+const SLOW_SPEED = 950;
 
 const SlideMarksAll:React.FC = () => {  
     const sectionRef = useRef<HTMLDivElement>(null); 
@@ -18,6 +17,7 @@ const SlideMarksAll:React.FC = () => {
     const [titleHeight, setTitleHeight] = useState(0);
     const [actualTitleHeight, setActualTitleHeight] = useState(0);
     const [swiperSpeed, setSwiperSpeed] = useState(FAST_SPEED);
+    const [imagesOpacity, setImagesOpacity] = useState(0);
 
     useEffect(() => {
         const title = titleRef.current;
@@ -25,6 +25,19 @@ const SlideMarksAll:React.FC = () => {
             setActualTitleHeight(title.scrollHeight);
         }
     }, []);
+
+    const calcSlidesPerView = () => {
+        switch (true) {
+            case window.innerWidth < 400:
+                return 1;
+            case window.innerWidth < 768:
+                return 2.5;
+            case window.innerWidth < 1024:
+                return 3;
+            default:
+                return 5;
+        }
+    }
 
     useEffect(() => { 
         const section = sectionRef.current; 
@@ -34,44 +47,59 @@ const SlideMarksAll:React.FC = () => {
             const rect = section.getBoundingClientRect(); 
             const windowHeight = window.innerHeight; 
              
-            if (rect.top <= windowHeight * 0.60) { 
+            if (rect.top <= windowHeight * 0.90) { 
                 const progress = Math.min( 
                     1, 
                     (windowHeight * 0.95 - rect.top) / (windowHeight * 0.3) 
                 ); 
-                 
+                
                 const easedProgress = Math.pow(progress, 0.7); 
                 
-                const maxTopPadding = 32;
-                const maxBottomPadding = 64;
-                
-                const currentTopPadding = easedProgress * maxTopPadding;
-                const currentBottomPadding = easedProgress < 1 ? easedProgress * maxBottomPadding : 0;
-                
-                setSectionTopPadding(currentTopPadding); 
-                setSectionBottomPadding(currentBottomPadding);
-                setTitleOpacity(easedProgress); 
-                setTitleScale(0.8 + (easedProgress * 0.2));
-                setTitleHeight(actualTitleHeight * easedProgress);
+                // Las imágenes completan su aparición en la primera mitad del progreso
+                const imagesProgress = Math.min(1, easedProgress * 2);
+                setImagesOpacity(imagesProgress);
 
-                // Ajustamos la velocidad del Swiper
-                if (swiperRef.current?.swiper) {
-                    const newSpeed = FAST_SPEED + (SLOW_SPEED - FAST_SPEED) * easedProgress;
-                    setSwiperSpeed(newSpeed);
+                // El título comienza después que las imágenes alcancen opacidad 1
+                const titleProgress = Math.max(0, (easedProgress - 0.5) * 2);
+                
+                // Solo aplicamos los efectos del título cuando las imágenes están completamente visibles
+                if (imagesProgress >= 1) {
+                    const maxTopPadding = 32;
+                    const maxBottomPadding = 64;
                     
-                    // Actualizamos la velocidad del autoplay
-                    swiperRef.current.swiper.params.autoplay.delay = newSpeed;
-                    swiperRef.current.swiper.autoplay.running && swiperRef.current.swiper.autoplay.start();
+                    const currentTopPadding = titleProgress * maxTopPadding;
+                    const currentBottomPadding = titleProgress < 1 ? titleProgress * maxBottomPadding : 0;
+                    
+                    setSectionTopPadding(currentTopPadding); 
+                    setSectionBottomPadding(currentBottomPadding);
+                    setTitleOpacity(titleProgress); 
+                    setTitleScale(0.8 + (titleProgress * 0.2));
+                    setTitleHeight(actualTitleHeight * titleProgress);
+
+                    if (swiperRef.current?.swiper) {
+                        const newSpeed = FAST_SPEED + (SLOW_SPEED - FAST_SPEED) * titleProgress;
+                        setSwiperSpeed(newSpeed);
+                        swiperRef.current.swiper.params.autoplay.delay = newSpeed;
+                        swiperRef.current.swiper.autoplay.running && swiperRef.current.swiper.autoplay.start();
+                    }
+                } else {
+                    // Mantenemos todo en cero hasta que las imágenes estén completamente visibles
+                    setSectionTopPadding(0); 
+                    setSectionBottomPadding(0);
+                    setTitleOpacity(0); 
+                    setTitleScale(0.8);
+                    setTitleHeight(0);
                 }
             } else { 
+                // Reset de todos los valores
                 setSectionTopPadding(0); 
                 setSectionBottomPadding(0);
                 setTitleOpacity(0); 
                 setTitleScale(0.8);
                 setTitleHeight(0);
                 setSwiperSpeed(FAST_SPEED);
+                setImagesOpacity(0);
 
-                // Reseteamos a velocidad rápida
                 if (swiperRef.current?.swiper) {
                     swiperRef.current.swiper.params.autoplay.delay = FAST_SPEED;
                     swiperRef.current.swiper.autoplay.running && swiperRef.current.swiper.autoplay.start();
@@ -83,7 +111,7 @@ const SlideMarksAll:React.FC = () => {
         handleScroll(); 
          
         return () => window.removeEventListener('scroll', handleScroll); 
-    }, [actualTitleHeight]); 
+    }, [actualTitleHeight]);
     
     return (  
         <div  
@@ -102,7 +130,7 @@ const SlideMarksAll:React.FC = () => {
             >
                 <h2  
                     ref={titleRef}
-                    className='text-AdBlue font-medium text-5xl text-center transition-all duration-300 ease-out' 
+                    className='text-AdBlue font-bold text-4xl text-center transition-all duration-300 ease-out' 
                     style={{ 
                         opacity: titleOpacity, 
                         transform: `scale(${titleScale})`, 
@@ -114,7 +142,7 @@ const SlideMarksAll:React.FC = () => {
             </div>
             <Swiper  
                 ref={swiperRef}
-                slidesPerView={5}  
+                slidesPerView={calcSlidesPerView()}  
                 centeredSlides={true}  
                 loop={true}  
                 speed={swiperSpeed}
@@ -122,12 +150,21 @@ const SlideMarksAll:React.FC = () => {
                     delay: swiperSpeed,  
                     disableOnInteraction: false,  
                 }}  
-                spaceBetween={60}  
+                spaceBetween={ window.innerWidth < 1024 ? 0 : 60 }  
                 modules={[Autoplay]}  
+                style={{
+                    paddingBottom:'32px'
+                }}
             >  
                 {marksOfClients.map((mark) => (  
                     <SwiperSlide key={mark.id} className='flex items-center h-full'>  
-                        <div>  
+                        <div 
+                            className="transition-opacity duration-700 ease-out"
+                            style={{
+                                opacity: imagesOpacity,
+                                willChange: 'opacity'
+                            }}
+                        >  
                             <img  
                                 src={mark.img}  
                                 alt="marks"  

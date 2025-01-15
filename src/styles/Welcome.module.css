@@ -1,66 +1,3 @@
-/* .back{
-    background: url('/back-cell-04.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #ededed;
-    min-height: 100vh;
-    position: relative;
-    z-index: -1;
-    animation: myMoves var(--vel) infinite linear ;
-    -webkit-animation: myMoves var(--vel) infinite linear ;
-}
-
-@media (width > 1024px) {
-    .back{
-        background: url('/back-pc.jpg');
-        background-size: cover;
-        position: relative;
-    }
-    .back::before{
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.5);
-    }
-}
-
-@keyframes myMoves {
-    0% {
-        scale: 1;
-    }
-    50%{
-        scale: 1.04;
-    }
-    100% {
-        scale: 1;
-    }
-}
-
-.opositeMove{
-    animation: opositeMoves var(--vel) infinite linear ;
-    -webkit-animation: opositeMoves var(--vel) infinite linear ;
-}
-
-@keyframes opositeMoves {
-    0% {
-        scale: .94;
-    }
-    50%{
-        scale: 1;
-    }
-    100% {
-        scale: .94;
-    }
-} */
-
-
-
-
-
 
 .back{
     background: url('/back-cell-04.jpg');
@@ -93,14 +30,14 @@
 }
 
 :root{
-    --vel:10s
+    --vel:6.5s
 }
 
 @keyframes myMoves {
     0% {
         scale: 1;
     }
-    50%{
+    27%{
         scale: 1.05;
     }
     100% {
@@ -117,7 +54,7 @@
     0% {
         scale: 1;
     }
-    50%{
+    27%{
         scale: .95;
     }
     100% {

@@ -71,8 +71,8 @@ const GridProject: React.FC<GridProjectProps> = ({dataProject}) => {
                             relative overflow-hidden rounded-md hover:cursor-pointer 
                             transform transition-all duration-700 ease-out 
                             ${visibleProjects[index] ? 
-                                'opacity-100 translate-y-0' : 
-                                'opacity-0 translate-y-10'
+                                'opacity-100 ' : 
+                                'opacity-30 '
                             } 
                         `} 
                     > 

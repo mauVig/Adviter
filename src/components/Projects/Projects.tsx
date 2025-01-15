@@ -78,7 +78,7 @@ const Projects: React.FC = () => {
     }, []);
 
     return (  
-        <section>  
+        <section id='projects'>  
             <h2  
                 ref={titleRef} 
                 className="
@@ -94,7 +94,7 @@ const Projects: React.FC = () => {
             <p 
                 ref={paragraphRef}
                 className="
-                    text-center text-6xl font-medium leading-10 mt-8
+                    text-center text-6xl font-medium leading-[3rem]  mt-8 
                     transition-all duration-300 ease-out
                 "
                 style={{
@@ -103,7 +103,7 @@ const Projects: React.FC = () => {
             >
                 Effective solutions
             </p>  
-            <div className="projects-list pb-32 px-0 lg:px-10 2xl:px-0 ">  
+            <div className="projects-list pb-32 px-0 lg:px-10 2xl:px-0">  
                 {isMobile ? <SlideProject dataProject={dataProject} /> : <GridProject dataProject={dataProject}  />}  
             </div>  
         </section>  

@@ -1,57 +1,98 @@
 ---
-const { title, logoUrl, gridStyle } = Astro.props
+const { title, logoUrl, gridStyle } = Astro.props;
 ---
 
 <div class={`flex my-2 w-full md:w-auto`}>
-    <div class="w-20 border-2 rounded-lg flex justify-center items-center">
-        <img src={logoUrl} class="p-5">
-    </div>
-    <div class="border-2 -ml-[2px] rounded-lg flex justify-center items-center max-w-fit text-xl font-medium px-6 card-appear">
-        <div>
-            <h3 class="truncate">{title}</h3>
-        </div>
-    </div>
+  <div class='w-20 border-2 rounded-lg flex justify-center items-center'>
+    <img src={logoUrl} class='p-5 logo-image' />
+  </div>
+  <div 
+    class='border-2 -ml-[2px] rounded-lg flex justify-center items-center text-xl font-medium px-4 title-container text-gray-500'
+  >
+    <h3 class="title-text">{title}</h3>
+  </div>
 </div>
 
 <style>
-  .card-appear {
-    width: 0;
-    opacity: 0;
+  .title-container {
+    background-color: transparent;
   }
 
-  .card-appear.visible {
-    animation: moves 3s forwards;
+  @keyframes backgroundEffect {
+    0%,100% {
+      background-color: transparent;
+    }
+    60% {
+      background-color: #ededed;
+    }
   }
 
-  @keyframes moves {
+  @keyframes textEffect {
+    0%,100% {
+      color: #ededed;
+    }
+    60% {
+      color: black;
+    }
+  }
+
+  @keyframes imageEffect {
     0% {
-      width: 0;
-      opacity: 0;
+      transform: scale(0.5) rotate(-90deg);
     }
     100% {
-      width: 100%;
-      opacity: 1;
+      transform: scale(1) rotate(0deg);
     }
+  }
+
+  .title-container.active {
+    animation: backgroundEffect 1.5s ease-in;
+  }
+
+  .title-text.active {
+    animation: textEffect .9s ease-in;
+  }
+
+  .logo-image.active {
+    animation: imageEffect .9s ease-in-out;
   }
 </style>
 
 <script>
-  // Creamos el observer
+  let lastRatio = 0;
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Cuando el elemento es visible, añadimos la clase que dispara la animación
-        entry.target.classList.add('visible');
-        // Dejar de observar el elemento una vez que se ha animado
-        observer.unobserve(entry.target);
+      const titleContainer = entry.target;
+      const titleText = titleContainer.querySelector('.title-text');
+      const logoImage = titleContainer.parentElement?.querySelector('.logo-image');
+      
+      // Obtenemos el ratio actual de intersección
+      const currentRatio = entry.intersectionRatio;
+      
+      // Si estamos bajando (el ratio aumenta)
+      if (currentRatio >= 0.8) {
+        titleContainer.classList.add('active');
+        titleText?.classList.add('active');
+        logoImage?.classList.add('active');
       }
+      // Si estamos llegando al 70% o menos
+      else if (currentRatio <= 0.7) {
+        titleContainer.classList.remove('active');
+        titleText?.classList.remove('active');
+        logoImage?.classList.remove('active');
+      }
+      
+      // Actualizamos el último ratio
+      lastRatio = currentRatio;
     });
   }, {
-    threshold: 0.2 // La animación comenzará cuando al menos 10% del elemento sea visible
+    threshold: [0.7, 0.75, 0.8], // Observamos los puntos clave
+    rootMargin: '0px'
   });
 
-  // Observamos todos los elementos con la clase card-appear
-  document.querySelectorAll('.card-appear').forEach((el) => {
+  // Observamos los contenedores
+  document.querySelectorAll('.title-container').forEach((el) => {
     observer.observe(el);
   });
 </script>

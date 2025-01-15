@@ -4,9 +4,11 @@ interface AboutData {
     title: string;
     description: string;
     imgUrl: string;
-    back?: string;
-    color?: string;
-    effectBack?: string;
+    back: string;
+    color: string;
+    effectBack: string;
+    href: string;
+    arrowName: string;
 }
 
 export const aboutData:AboutData[] = [
@@ -17,7 +19,9 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About1.jpg',
         back: '#ededed',
         color:'#0078ff',
-        effectBack:'lg:before:bg-[#0078ff] '
+        effectBack:'lg:before:bg-[#0078ff]',
+        href:'https://adviters.com/transformacion-digital/smart-ecommerce-ai/',
+        arrowName:'darkBlue'
     },
     {
         id: 2,
@@ -26,7 +30,9 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About2.jpg',
         back: '#000755',
         color:'#0078ff',
-        effectBack:'lg:before:bg-[#000755]'
+        effectBack:'lg:before:bg-[#000755]',
+        href:'https://adviters.com/finance/financial-fraud-detection-with-artificial-intelligence/',
+        arrowName:'blue'
     },
     {
         id: 3,
@@ -35,16 +41,19 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About3.jpg',
         back: '#0078ff',
         color:'#000755',
-        effectBack:'lg:before:bg-[#3c3c3b]'
+        effectBack:'lg:before:bg-[#3c3c3b]',
+        href:'https://adviters.com/ciberseguridad/artificial-intelligence-and-cybersecurity/',
+        arrowName:'grey'
     },
     {
         id: 4,
-        title: 'Transforming Finance and Insurance with Generative AI: Enhancing Customer Engagement and Operational Efficiency',
+        title: 'Transforming Finance and Insurance with Generative AI',
         description: 'Discover how Generative AI and Large Language Models are revolutionizing the finance and insurance industries, enhancing customer engagement, and optimizing operational efficiency. Learn about AI-driven innovation, personalized marketing, and cutting-edge applications transforming business processes.',
         imgUrl: '/aboutPick/About4.jpg',
         back: '#3c3c3b',
         color:'#ededed',
-        effectBack:'lg:before:bg-[#0078ff]'
-
+        effectBack:'lg:before:bg-[#0078ff]',
+        href:'https://adviters.com/transformacion-digital/transforming-finance-and-insurance-with-generative-ai/',
+        arrowName:'darkBlue'
     }
 ]

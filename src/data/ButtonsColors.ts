@@ -9,7 +9,7 @@ export const arrButtons:IButtonColor[] = [
     {
         id:1,
         name:'blue',
-        svgArr:'/svg/arr-blue.svg',
+        svgArr:'/svg/Arr-blue.svg',
         color:'text-AdBlue'
     },
     {

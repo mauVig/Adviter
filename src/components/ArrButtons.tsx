@@ -14,7 +14,7 @@ export const ArrButtons: React.FC<ArrButtonsProps> = ({ whitch, myClass }) => {
                 w-16 
                 border-2 
                 ${oneButtom.color} 
-                ${myClass ? myClass : ''} 
+                ${myClass ?? myClass} 
                 rounded-3xl 
                 flex 
                 items-center 
@@ -23,7 +23,11 @@ export const ArrButtons: React.FC<ArrButtonsProps> = ({ whitch, myClass }) => {
                 py-2 
                 overflow-hidden 
                 group
-                hover:cursor-pointer
+                group-hover:cursor-pointer
+                group-hover:bg-textGray
+                transition-all
+                duration-300
+                ease-out
             `}
         >
             <img 

@@ -23,19 +23,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
         <div className='flex items-center xl:items-baseline'>
           <div className='hidden xl:flex items-center'>
             <ul className='flex text-textGray text-xl'>
-              <a href="" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="#service" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Service</li>
               </a>
-              <a href="" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="#projects" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Our work</li>
               </a>
-              <a href="" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
-                <li>Pulse</li>
+              <a href="#blog" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+                <li>News</li>
               </a>
               <a href="" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>About</li>
               </a>
-              <a href="" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="#careers" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Careers</li>
               </a>
             </ul>

@@ -3,19 +3,19 @@ import { aboutData } from '../data/About';
 import { ArrButtons } from './ArrButtons';
 
 const isMobile = `
- function getStyles(data) {
-   if (window.innerWidth <= 1024) {
-     return {
-       backgroundColor: data.back,
-       color: data.color
-     };
-   }
-   return {};
- }
+  function getStyles(data) {
+    if (window.innerWidth <= 1024) {
+      return {
+        backgroundColor: data.back,
+        color: data.color
+      };
+    }
+    return {};
+  }
 `;
 ---
 
-<div class='bg-textGray pt-32'>
+<div class='bg-textGray pt-32' id="blog">
   <div
     class='max-w-screen-2xl mx-auto px-10 2xl:px-0 flex justify-center sm:justify-between pb-16'
   >
@@ -33,34 +33,35 @@ const isMobile = `
   </div>
   {
     aboutData.map((data) => (
-      <div
-        class={`p-10 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 hover:before:w-full lg:hover:cursor-pointer before:z-0 group hover-text-change`}
-        id={`about-${data.title}`}
-      >
-        <div class='grid grid-cols-4 gap-5 sm:gap-10 py-2 max-w-screen-2xl mx-auto relative lg:after:absolute lg:after:bottom-0 lg:after:left-0 lg:after:w-full lg:after:h-[1px] lg:after:bg-AdDarkBlue'>
-          <div class=' col-span-2 grid grid-rows-5'>
-            <div class='font-bold col-span-2 row-span-4 flex items-start'>
-              <h2 class='text-xl lg:text-AdDarkBlue lg:text-4xl font-bold flex items-center relative z-10 h-20 max-w-[400px]'>
-                {data.title}
-              </h2>
-            </div>
-            <div class='row-span-1 z-20 mb-8'>
-              <ArrButtons whitch='darkBlue' />
-            </div>
-          </div>
-          <div class='col-span-2 lg:col-span-1'>
-            <img
-              src={data.imgUrl}
-              alt={`Picture about ${data.title}`}
-              class='sm:w-72 transition-all duration-500 ease-out lg:opacity-0 lg:translate-y-10 lg:group-hover:opacity-100 lg:group-hover:-translate-y-20'
-            />
-          </div>
-
-          <p class='text-xs hidden lg:block lg:text-lg lg:leading-6 lg:text-AdDarkBlue font-medium relative z-10'>
-            {data.description}
-          </p>
-        </div>
-      </div>
+     <a href={data.href} target="_blank" class="cursor-pointer group"  >
+       <div
+         class={`p-10 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 before:z-0 scroll-effect`}
+         id={`about-${data.title}`}
+       >
+         <div class='grid grid-cols-4 gap-5 sm:gap-10 py-2 max-w-screen-2xl mx-auto relative lg:after:absolute lg:after:bottom-0 lg:after:left-0 lg:after:w-full lg:after:h-[1px] lg:after:bg-AdDarkBlue'>
+           <div class='col-span-2 grid grid-rows-5'>
+             <div class='font-bold col-span-2 row-span-4 flex items-start'>
+               <h2 class='text-xl lg:text-AdDarkBlue lg:text-3xl font-bold flex items-center relative z-10 h-20 max-w-[400px] lg:transition-colors lg:duration-300'>
+                 {data.title}
+               </h2>
+             </div>
+             <div class='row-span-1 z-20 mb-8 mobile-animation'>
+               <ArrButtons whitch={data.arrowName}/>
+             </div>
+           </div>
+           <div class='col-span-2 lg:col-span-1'>
+             <img
+               src={data.imgUrl}
+               alt={`Picture about ${data.title}`}
+               class='sm:w-72 blog-image transition-all duration-500 ease-out'
+             />
+           </div>
+           <p class='text-xs hidden lg:block lg:text-lg lg:leading-6 lg:text-AdDarkBlue font-medium relative z-10 transition-colors duration-300'>
+             {data.description}
+           </p>
+         </div>
+       </div>
+     </a>
     ))
   }
 </div>
@@ -68,6 +69,7 @@ const isMobile = `
 <script define:vars={{ aboutData, isMobile }}>
   eval(isMobile);
 
+  // Función para aplicar estilos móviles
   aboutData.forEach((data) => {
     const element = document.getElementById(`about-${data.title}`);
     if (element) {
@@ -83,12 +85,108 @@ const isMobile = `
       }
     });
   });
+
+  // Configuración del Intersection Observer
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.3,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      const img = element.querySelector('.blog-image');
+      const textElements = element.querySelectorAll('h2, p');
+
+      if (entry.isIntersecting) {
+        element.classList.add('scroll-active');
+        img.classList.add('image-visible');
+        // Solo aplicamos el cambio de color al texto en desktop
+        if (window.innerWidth > 1024) {
+          textElements.forEach((el) => (el.style.color = '#ededed'));
+        }
+      } else {
+        element.classList.remove('scroll-active');
+        img.classList.remove('image-visible');
+        if (window.innerWidth > 1024) {
+          textElements.forEach((el) => (el.style.color = ''));
+        }
+      }
+    });
+  }, observerOptions);
+
+  // Observar todos los elementos con la clase scroll-effect
+  document.querySelectorAll('.scroll-effect').forEach((element) => {
+    observer.observe(element);
+  });
 </script>
 
 <style>
+  /* Estilos para escritorio (>1024px) */
   @media (width > 1023px) {
-    .hover-text-change:hover * {
+    .blog-image {
+      opacity: 0;
+      transform: translateY(2.5rem);
+    }
+
+    .scroll-effect::before {
+      transition: width 0.3s ease-in-out;
+    }
+
+    .scroll-active::before {
+      width: 100% !important;
+    }
+
+    .mobile-animation {
+      animation: none;
+    }
+
+    .scroll-active * {
       color: #ededed !important;
+    }
+  }
+
+  /* Estilos para móvil (≤1024px) */
+  @media (width <= 1024px) {
+    .blog-image {
+      opacity: 0;
+      transform: translateY(2.5rem);
+    }
+
+    .scroll-effect::before {
+      transition: width 0.3s ease-in-out;
+    }
+
+    .scroll-active::before {
+      width: 100% !important;
+    }
+
+    /* Animación constante para los botones en móvil */
+    .mobile-animation {
+      animation: pulse 2s infinite;
+    }
+  }
+
+  /* Estilos compartidos */
+  .image-visible {
+    opacity: 1 !important;
+    transform: translateY(-5rem) !important;
+  }
+
+  /* Animación de pulso para los botones en móvil */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.05);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
     }
   }
 </style>
