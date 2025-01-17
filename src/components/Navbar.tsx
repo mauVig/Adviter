@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Arrow } from '@/data/icons'; // Asumiendo que tienes el tipo Icon exportado
+import type { Arrow } from '@/data/icons'; 
 import st from '@/styles/navBar.module.css';
 
 interface NavbarProps {
@@ -11,8 +11,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
 
   return (
     <div className='w-full fixed top-0 flex justify-center z-[150]'>
-      <nav className='mx-auto w-full flex justify-between py-2 px-8'>
-      {/* <nav className='mx-auto w-full flex justify-between py-2 px-8 bg-AdDarkBlue/25 backdrop-blur-3xl'> */}
+      {/* <nav className='mx-auto w-full flex justify-between py-2 px-8'> */}
+      <nav className='mx-auto w-full flex justify-between py-2 px-8 bg-textBlack/15 backdrop-blur-3xl'>
         <div className='flex items-center h-10 text-textGray text-xl'>
           <img 
             src={typeof currentIcon.src === 'string' ? currentIcon.src : ''} 
@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
           </label>
         </div>
 
-        <div className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center items-center text-6xl text-center z-[500] ${check ? 'block' : 'hidden'}`}>
+        <div className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center items-center text-8xl text-center z-[500] ${check ? 'block' : 'hidden'}`}>
           
           <div>
             <ul>

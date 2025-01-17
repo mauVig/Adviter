@@ -29,7 +29,7 @@ const SlideMarksAll:React.FC = () => {
     const calcSlidesPerView = () => {
         switch (true) {
             case window.innerWidth < 400:
-                return 1;
+                return 1.01;
             case window.innerWidth < 768:
                 return 2.5;
             case window.innerWidth < 1024:
@@ -150,18 +150,18 @@ const SlideMarksAll:React.FC = () => {
                     delay: swiperSpeed,  
                     disableOnInteraction: false,  
                 }}  
-                spaceBetween={ window.innerWidth < 1024 ? 0 : 60 }  
+                spaceBetween={ window.innerWidth < 1024 ? 10 : 60 }  
                 modules={[Autoplay]}  
                 style={{
                     paddingBottom:'32px'
                 }}
             >  
                 {marksOfClients.map((mark) => (  
-                    <SwiperSlide key={mark.id} className='flex items-center h-full'>  
+                    <SwiperSlide key={mark.id} className='flex items-center h-full '>  
                         <div 
-                            className="transition-opacity duration-700 ease-out"
+                            className="transition-opacity duration-700 ease-out "
                             style={{
-                                opacity: imagesOpacity,
+                                // opacity: imagesOpacity,
                                 willChange: 'opacity'
                             }}
                         >  

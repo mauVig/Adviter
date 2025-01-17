@@ -15,21 +15,10 @@ const isMobile = `
 `;
 ---
 
-<div class='bg-textGray pt-32' id="blog">
-  <div
-    class='max-w-screen-2xl mx-auto px-10 2xl:px-0 flex justify-center sm:justify-between pb-16'
-  >
-    <span
-      class='text-2xl px-6 py-1 rounded-3xl bg-AdDarkBlue text-textGray hidden sm:block'
-      >BLOG</span
-    >
-    <span class='text-2xl px-6 py-1 rounded-3xl bg-AdDarkBlue text-textGray'
-      >BLOG</span
-    >
-    <span
-      class='text-2xl px-6 py-1 rounded-3xl bg-AdDarkBlue text-textGray hidden sm:block'
-      >BLOG</span
-    >
+<div class='bg-textGray relative' id="blog">
+  <div class="absolute -top-10 left-0 px-10 flex justify-between w-full">
+    <h3 class="text-base mid:text-xl md:text-2xl text-textGray">News</h3>
+    <h3 class="hidden lg:block text-2xl text-textGray">News</h3>
   </div>
   {
     aboutData.map((data) => (
@@ -41,7 +30,7 @@ const isMobile = `
          <div class='grid grid-cols-4 gap-5 sm:gap-10 py-2 max-w-screen-2xl mx-auto relative'>
            <div class='col-span-2 grid grid-rows-5'>
              <div class='font-bold col-span-2 row-span-4 flex items-start'>
-               <h2 class='text-xl lg:text-AdDarkBlue lg:text-3xl font-bold flex items-center relative z-10 h-20 max-w-[400px] lg:transition-colors lg:duration-300'>
+               <h2 class='text-xl md:text-3xl lg:text-AdDarkBlue lg:text-4xl font-bold flex items-center relative z-10 h-20 max-w-[400px] lg:transition-colors lg:duration-300'>
                  {data.title}
                </h2>
              </div>

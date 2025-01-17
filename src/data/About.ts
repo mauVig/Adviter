@@ -40,7 +40,7 @@ export const aboutData:AboutData[] = [
         description: 'In an increasingly complex digital world, cybersecurity and artificial intelligence are emerging as a powerful combination to protect our systems and data. ',
         imgUrl: '/aboutPick/About3.jpg',
         back: '#3c3c3b',
-        color:'#000755',
+        color:'#ededed',
         effectBack:'lg:before:bg-[#3c3c3b]',
         href:'https://adviters.com/ciberseguridad/artificial-intelligence-and-cybersecurity/',
         arrowName:'grey'
@@ -51,7 +51,6 @@ export const aboutData:AboutData[] = [
         description: 'Discover how Generative AI and Large Language Models are revolutionizing the finance and insurance industries, enhancing customer engagement, and optimizing operational efficiency. Learn about AI-driven innovation, personalized marketing, and cutting-edge applications transforming business processes.',
         imgUrl: '/aboutPick/About4.jpg',
         back: '#0078ff',
-
         color:'#ededed',
         effectBack:'lg:before:bg-[#0078ff]',
         href:'https://adviters.com/transformacion-digital/transforming-finance-and-insurance-with-generative-ai/',

@@ -4,7 +4,7 @@ import { adIcons } from '@/data/icons';
 const Footer: react.FC = () => {
   return (
     <footer className='bg-AdBlue text-textBlack p-10'>
-      <div className="max-w-screen-lg mx-auto">
+      <div className=" mx-auto ">
         <div className='grid grid-cols-4 gap-10'>
           <div>
             <h3 className='mb-2'>Explorer</h3>

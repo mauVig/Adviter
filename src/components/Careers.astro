@@ -1,29 +1,33 @@
 ---
-import { ArrButtons } from "./ArrButtons";
-
-
+import { ArrButtons } from './ArrButtons';
 ---
 
 <div
   class='min-h-[120vh] px-10 w-full backCareers flex flex-col items-center justify-center text-textGray'
-  id="careers"
-  >
- <div class=" max-w-screen-lg mx-auto group group-hover:cursor-pointer">
-  <div
-    class='p-12 border-2 border-AdBlue preTitle backdrop-blur-xl relative z-10'
-  >
-     <h2 class='text-4xl sm:text-5xl lg:text-7xl font-semibold -pl-[3px]'>
-       Grow your career at the <br class="hidden md:block"/> heart of change It's your <br class="hidden md:block"/> time to shine.
-     </h2>
-     <p class='text-2xl mt-1'>Bring your ingenuity, curiosity and big ideas.</p>
-   </div>
-   <div class='w-full text-textGray relative z-10 mt-4 grid grid-col-8'>
-     <div class='col-start-8 flex justify-end items-center'>
-       <p class="text-xl mr-6">Join us</p>
-       <ArrButtons whitch="grey" />
-     </div>
-   </div>
- </div>
+  id='careers'
+>
+  <div class='max-w-screen-lg mx-auto group group-hover:cursor-pointer'>
+    <div
+      class='p-12 border-2 border-AdBlue preTitle backdrop-blur-xl relative z-10'
+    >
+      <h2 class='text-4xl sm:text-5xl lg:text-7xl font-semibold -pl-[3px]'>
+        Grow your career at the <br class='hidden md:block' /> heart of change It's
+        your <br class='hidden md:block' /> time to shine.
+      </h2>
+      <p class='text-base mid:text-2xl mt-1'>
+        Bring your ingenuity, curiosity and big ideas.
+      </p>
+    </div>
+    <div class='w-full text-textGray relative z-10 mt-4 grid grid-col-8'>
+      <div>
+        <img src='/footer/gptw.png' alt='Picture about gptw' class='w-12' />
+      </div>
+      <div class='col-start-8 flex justify-end items-center'>
+        <p class='text-xl mr-6'>Join us</p>
+        <ArrButtons whitch='grey' />
+      </div>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -42,8 +46,7 @@ import { ArrButtons } from "./ArrButtons";
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
   }
-  .preTitle{
-  
+  .preTitle {
   }
   .preTitle::before {
     content: 'Careers';
@@ -51,11 +54,11 @@ import { ArrButtons } from "./ArrButtons";
     top: -3.6rem;
     left: 0;
     font-size: 1.25rem;
-    line-height: 1.75rem ;
+    line-height: 1.75rem;
     color: #0078ff;
     border: 1px solid #0078ff;
     padding: 0.5rem 1.5rem;
-    border-radius: 1.5rem 
+    border-radius: 1.5rem;
   }
   .preTitle:hover .backArrow {
     background: #ededed;
