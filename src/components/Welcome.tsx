@@ -40,7 +40,7 @@ const Welcome: React.FC = () => {
               <div>
                 <button 
                   className={`
-                    text-xl lg:text-2xl py-1 lg:mt-4 px-4 rounded-md bg-AdBlue font-semibold
+                    text-xl lg:text-2xl py-1 lg:mt-4 px-4 rounded-md bg-AdBlue font-semibold hover:scale-105 hover:bg-AdDarkBlue  active:scale-95  
                     transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove}
                     ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
                   `}

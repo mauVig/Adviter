@@ -18,7 +18,7 @@ const Footer: react.FC = () => {
               <a href='#blog' className='font-bold'>
                 <li>News</li>
               </a>
-              <a href='#' className='font-bold'>
+              <a href='#careers' className='font-bold'>
                 <li>About</li>
               </a>
               <a href='#careers' className='font-bold'>
@@ -60,7 +60,7 @@ const Footer: react.FC = () => {
           </div>
         </div>
         
-        <div className='sm:flex items-end justify-between mt-12'>
+        <div className='sm:flex items-end justify-between mt-12 sm:-mt-12'>
           <div className='flex items-center'>
             <img src={adIcons[3].src} alt='' className='h-12' />
           </div>

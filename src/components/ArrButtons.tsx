@@ -24,10 +24,10 @@ export const ArrButtons: React.FC<ArrButtonsProps> = ({ whitch, myClass }) => {
                 overflow-hidden 
                 group
                 group-hover:cursor-pointer
-                group-hover:bg-textGray
                 transition-all
                 duration-300
                 ease-out
+                drop-shadow-2xl	
             `}
         >
             <img 

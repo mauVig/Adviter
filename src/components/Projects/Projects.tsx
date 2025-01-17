@@ -5,15 +5,9 @@ import { dataProject } from '@/data/ProjectsData';
 
 const Projects: React.FC = () => {  
     const [isMobile, setIsMobile] = useState(false);  
-    const [scrollProgress, setScrollProgress] = useState(0);
     const titleRef = useRef<HTMLHeadingElement>(null);  
     const paragraphRef = useRef<HTMLParagraphElement>(null); // Nuevo ref para el párrafo
-    const lg = 1024;  
-    
-    const START_COLOR = 'rgb(237, 237, 237)';  
-    const END_COLOR = '#0078ff';
-      
-    useEffect(() => {  
+    const lg = 1024;     useEffect(() => {  
         setIsMobile(window.innerWidth <= lg);  
         const handleResize = () => {  
             setIsMobile(window.innerWidth <= lg);  

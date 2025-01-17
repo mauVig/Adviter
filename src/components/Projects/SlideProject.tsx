@@ -43,7 +43,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
           <SwiperSlide key={projectOne.id}  className='px-[.9rem]'>
             <div className="w-full relative">
               <img 
-                src={typeof projectOne.urlImg === 'string' ? projectOne.urlImg : ''} 
+                src={typeof projectOne.urlCellImg === 'string' ? projectOne.urlCellImg : ''} 
                 alt={`Picture of ${projectOne.title} client`} 
                 className='min-h-[680px] max-h-[680px] background-cover w-full h-full object-cover rounded-md'
               />
@@ -51,7 +51,9 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
             {activeIndex === index && (
               <div className='flex justify-between items-start mt-2 gap-4 transition-opacity duration-300 ease-in-out'>
                 <div className='flex flex-col items-start justify-start gap-2'>
-                  <img src={projectOne.urlMarks} alt={projectOne.title} className=' max-h-16  rounded-2xl mb-2'/>
+                  <div>
+                    <img src={projectOne.urlMarks} alt={projectOne.title} className=' max-h-20  rounded-2xl mb-2'/>
+                  </div>
                   <a
                   key={projectOne.id}
                   href={projectOne.pdf} 
