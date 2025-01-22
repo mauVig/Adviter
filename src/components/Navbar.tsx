@@ -48,13 +48,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
       <nav className={`mx-auto w-full flex justify-between py-2 px-8 transition-all duration-300  ${
         !isAtTop ? 'bg-textBlack/25 backdrop-blur-3xl' : ''
       }`}>
-        <div className='flex items-center h-10 text-textGray text-xl'>
+        <a href='#' className='flex items-center h-10 text-textGray text-xl'>
           <img
             src={typeof currentIcon.src === 'string' ? currentIcon.src : ''}
             alt='Adviter logo'
             className={st.icon}
           />
-        </div>
+        </a>
 
         <div className='flex items-center xl:items-baseline'>
           <div className='hidden xl:flex items-center'>
