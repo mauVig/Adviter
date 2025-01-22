@@ -6,7 +6,7 @@ import { dataProject } from '@/data/ProjectsData';
 const Projects: React.FC = () => {  
     const [isMobile, setIsMobile] = useState(false);  
     const titleRef = useRef<HTMLHeadingElement>(null);  
-    const paragraphRef = useRef<HTMLParagraphElement>(null); // Nuevo ref para el párrafo
+    const paragraphRef = useRef<HTMLParagraphElement>(null); 
     const lg = 1024;     useEffect(() => {  
         setIsMobile(window.innerWidth <= lg);  
         const handleResize = () => {  

@@ -9,19 +9,19 @@ const Footer: react.FC = () => {
           <div>
             <h3 className='mb-2'>Explorer</h3>
             <ul>
-              <a href='#service' className='font-bold'>
+              <a href='#service' target='_blank' className='font-bold'>
                 <li>Services</li>
               </a>
-              <a href='#projects' className='font-bold truncate'>
+              <a href='#projects' target='_blank' className='font-bold truncate'>
                 <li>Out Work</li>
               </a>
-              <a href='#blog' className='font-bold'>
+              <a href='#blog' target='_blank' className='font-bold'>
                 <li>News</li>
               </a>
-              <a href='#careers' className='font-bold'>
+              <a href='#careers' target='_blank' className='font-bold'>
                 <li>About</li>
               </a>
-              <a href='#careers' className='font-bold'>
+              <a href='#careers' target='_blank' className='font-bold'>
                 <li>Careers</li>
               </a>
             </ul>
@@ -44,17 +44,17 @@ const Footer: react.FC = () => {
 
           <div className='text-left sm:text-right col-span-4 sm:col-span-1'>
             <ul>
-              <a href=''>
+              <a href='https://www.linkedin.com/company/adviters/?viewAsMember=true' target='_blank'>
                 <li>Linkedin</li>
               </a>
-              <a href=''>
+              <a href='https://www.linkedin.com/company/adviters/?viewAsMember=true' target='_blank'>
                 <li>Instagram</li>
               </a>
-              <a href=''>
+              <a href='https://www.youtube.com/channel/UC1WYkcUf7ZwLTwUi7QNR6og' target='_blank'>
                 <li>Youtube</li>
               </a>
-              <a href='' className='block pt-6'>
-                <li>info@adviters.com</li>
+              <a href='mailto:info@adviters.com' className='block pt-6' target='_blank'>
+                info@adviters.com
               </a>
             </ul>
           </div>
@@ -62,7 +62,7 @@ const Footer: react.FC = () => {
         
         <div className='sm:flex items-end justify-between mt-12 sm:-mt-12'>
           <div className='flex items-center'>
-            <img src={adIcons[3].src} alt='' className='h-12' />
+            <img src={adIcons[3].src} alt='Adviter black logo' className='h-12' />
           </div>
           <div className='flex mt-16 sm:justify-center items-end sm:items-center'>
             <img src='/footer/compliant.png' alt='Picture about HIPAA' className='h-12 scale-110' />

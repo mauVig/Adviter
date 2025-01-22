@@ -81,7 +81,8 @@ const GridProject: React.FC<GridProjectProps> = ({dataProject}) => {
                                 src={typeof projectOne.urlImg === 'string' ? projectOne.urlImg : ''} 
                                 alt={`Picture of ${projectOne.title} client`} 
                                 className="w-full h-full object-cover rounded-md transition-transform duration-300 group-hover:scale-110" 
-                            /> 
+                                loading="lazy"
+                           /> 
                             <div className="absolute inset-0 bg-textGray opacity-0 group-hover:opacity-90 transition-all duration-300 group-hover:scale-150 flex items-center justify-center"> 
                                 {projectOne.urlMarks && ( 
                                     <img 
