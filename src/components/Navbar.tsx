@@ -45,7 +45,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
     <div className={`w-full fixed transition-transform duration-300 ${
       scrollDirection === 'down' ? '-translate-y-full' : 'translate-y-0'
     } top-0 flex justify-center z-[150]`}>
-      <nav className={`mx-auto w-full flex justify-between py-2 px-8 transition-all duration-300  ${
+      <nav className={`mx-auto w-full flex justify-between py-2 px-8 transition-all duration-300 ${
         !isAtTop ? 'bg-textBlack/25 backdrop-blur-3xl' : ''
       }`}>
         <a href='#' className='flex items-center h-10 text-textGray text-xl'>
@@ -65,23 +65,19 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
               <a href="#projects" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Our work</li>
               </a>
-              <a href="#blog" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="https://adviters.com/pulse/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>News</li>
               </a>
-              <a href="#careers" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="https://adviters.com/about/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>About</li>
               </a>
-              <a href="#careers" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="https://adviters.com/careers-jobs/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Careers</li>
               </a>
             </ul>
           </div>
 
-          <div className='flex items-center'>
-            <button className='py-2 px-4 bottom-4 max-w-fit rounded-md text-textGray bg-AdBlue hover:scale-105 hover:bg-AdDarkBlue transition-all duration-200 active:scale-95'>
-              <span className='text-lg font-semibold truncate'>CONTACT US</span>
-            </button>
-          </div>
+        
 
           <label className='bg-AdBlue rounded-md relative ml-1 z-40 xl:hidden block'>
             <div className="w-[43px] h-[43px] cursor-pointer flex flex-col items-center justify-center">
@@ -97,28 +93,61 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
           </label>
         </div>
 
-        <div className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center items-center text-8xl text-center z-[500] ${check ? 'block' : 'hidden'}`}>
-            <button className="absolute  right-10 top-10" onClick={() => setCheck(false)}>
-              <div className="border-[1px] w-[40px] h-1 bg-textGray rotate-45"></div>
-              <div className="border-[1px] w-[40px] h-1 bg-textGray -rotate-45"></div>
-            </button>
-            <ul>
-              <a href="#service" className='hover:text-AdBlue' onClick={() => setCheck(false)}>
-                <li>Service</li>
-              </a>
-              <a href="#projects" className='hover:text-AdBlue' onClick={() => setCheck(false)}>
-                <li>Our work</li>
-              </a>
-              <a href="#blog" className='hover:text-AdBlue' onClick={() => setCheck(false)}>
-                <li>News</li>
-              </a>
-              <a href="#careers" className='hover:text-AdBlue' onClick={() => setCheck(false)}>
-                <li>About</li>
-              </a>
-              <a href="#careers" className='hover:text-AdBlue' onClick={() => setCheck(false)}>
-                <li>Careers</li>
-              </a>
-            </ul>
+        <div 
+          className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center flex-col   items-center text-4xl mid:text-6xl text-center z-[500] transition-all duration-500 ease-in-out
+            ${check ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}
+          >
+          <button 
+            className="absolute right-10 top-10" 
+            onClick={() => setCheck(false)}
+            >
+            <div className="border-[1px] w-[40px] h-1 bg-textGray rotate-45 translate-y-[0.35rem]"></div>
+            <div className="border-[1px] w-[40px] h-1 bg-textGray -rotate-45 translate-y-[0.15rem]"></div>
+          </button>
+          
+          <ul className="space-y-8">
+            <a 
+              href="#service" 
+              className={`block  hover:text-AdBlue hover:scale-110 delay-[300ms] transition-all ease-in-out  
+                ${check ? 'opacity-100 transladuration-500 te-x-0' : 'opacity-0 translate-x-10'}`}
+              onClick={() => setCheck(false)}
+            >
+              <li>Service</li>
+            </a>
+            <a 
+              href="#projects" 
+              className={`block hover:text-AdBlue hover:scale-110 delay-[400ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
+              onClick={() => setCheck(false)}
+            >
+              <li>Our work</li>
+            </a>
+            <a 
+              href="https://adviters.com/pulse/" target='_blank' 
+              className={`block hover:text-AdBlue hover:scale-110 delay-[500ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
+              onClick={() => setCheck(false)}
+            >
+              <li>News</li>
+            </a>
+            <a 
+              href="https://adviters.com/about/"  target='_blank'
+              className={`block hover:text-AdBlue hover:scale-110 delay-[600ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
+              onClick={() => setCheck(false)}
+            >
+              <li>About</li>
+            </a>
+            <a 
+              href="https://adviters.com/careers-jobs/" target='_blank'
+              className={`block hover:text-AdBlue hover:scale-110 delay-[700ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
+              onClick={() => setCheck(false)}
+            >
+              <li>Careers</li>
+            </a>
+          </ul>
+          <a 
+            href='https://adviters.com/careers-jobs/' target='_blank'
+            className={`py-2 px-4 mt-[32px] text-xl mid:text-3xl rounded-md text-textGray bg-AdBlue font-semibold truncate delay-[1000ms] transition-all ease-in-out ${check ? 'opacity-100 translate-y-0' : 'duration-1000 opacity-0 translate-y-10'}`}>
+            CONTACT US
+          </a>
         </div>
       </nav>
     </div>

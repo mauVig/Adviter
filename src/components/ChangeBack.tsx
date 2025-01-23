@@ -95,7 +95,7 @@ const ChangeBack = () => {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-[50vh] overflow-hidden"
+      className="relative overflow-hidden"
     >
       <div className="absolute top-0 -left-40  h-full">
         {arrowConfigs.map((config, index) => (
