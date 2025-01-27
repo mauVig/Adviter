@@ -105,6 +105,7 @@ const ChangeBack = () => {
             key={index}
             version={config.version}
             top={config.top}
+            left={config.left} 
           />
         ))}
       </div>

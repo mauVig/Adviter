@@ -1,11 +1,10 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useState, useCallback } from 'react';
-
 import type { Swiper as SwiperType } from 'swiper';
 import type { Project } from '@/data/ProjectsData';
-
 import 'swiper/css';
 import '@/styles/swiper.css';
+import { Autoplay } from 'swiper/modules';
 
 interface SlideProjectProps {
   dataProject: Project[];
@@ -21,7 +20,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
     const preView = useCallback(() => {
       switch (true) {
         case window.innerWidth < 576:
-          return 1.09;
+          return 1.1;
         case window.innerWidth < 768:
           return 1.5;
         default:
@@ -36,9 +35,12 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
           slidesPerView={preView()}
           loop={true}
           onSlideChange={handleSlideChange}
+          modules={[Autoplay]}  
           className="mySwiper"
-          preloadImages={false} // Ayuda a la carga lazy
-          updateOnImagesReady={true} // Actualiza el slider cuando las imágenes están listas
+          autoplay={{  
+            delay: 8000,  
+            disableOnInteraction: false,  
+        }}  
         >
           {dataProject.map((projectOne, index) => (
             <SwiperSlide key={projectOne.id} className="px-4">
@@ -46,20 +48,28 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
                 <img
                   src={typeof projectOne.urlCellImg === 'string' ? projectOne.urlCellImg : ''}
                   alt={`Picture of ${projectOne.title} client`}
-                  className="min-h-[680px] max-h-[680px] w-full h-full object-cover rounded-md"
+                  className="min-h-[500px] max-h-[680px] w-full h-full object-cover rounded-md"
                   loading="lazy"
-                  decoding="async" // Mejora el rendimiento de decodificación
-                  fetchPriority={index === activeIndex ? "high" : "low"} // Prioriza la imagen activa
+                  decoding="async"
+                  fetchPriority={index === activeIndex ? "high" : "low"}
                 />
               </div>
-              {activeIndex === index && (
-                <div className="flex justify-between items-start mt-2 gap-4 transition-all duration-300 ease-in-out">
+              <div 
+                className={`
+                  transform transition-all duration-500 ease-out
+                  ${activeIndex === index 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-4 pointer-events-none'
+                  }
+                `}
+              >
+                <div className="flex justify-between items-start mt-2 gap-4">
                   <div className="flex flex-col items-start justify-start gap-2">
                     <div>
                       <img
                         src={projectOne.urlMarks}
                         alt={projectOne.title}
-                        className="max-h-20 rounded-2xl mb-2"
+                        className="mb-2 max-w-[190px] w-full h-auto"
                         decoding="async"
                       />
                     </div>
@@ -78,7 +88,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
                     {projectOne.maker}
                   </p>
                 </div>
-              )}
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

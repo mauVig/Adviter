@@ -19,7 +19,7 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About1.jpg',
         back: '#0078ff',
         color:'#ededed',
-        effectBack:'lg:before:bg-[#0078ff]',
+        effectBack:'before:bg-[#0078ff]',
         href:'https://adviters.com/transformacion-digital/smart-ecommerce-ai/',
         arrowName:'darkBlue'
     },
@@ -30,7 +30,7 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About2.jpg',
         back: '#000755',
         color:'#ededed',
-        effectBack:'lg:before:bg-[#000755]',
+        effectBack:'before:bg-[#000755]',
         href:'https://adviters.com/finance/financial-fraud-detection-with-artificial-intelligence/',
         arrowName:'blue'
     },
@@ -41,7 +41,7 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About3.jpg',
         back: '#3c3c3b',
         color:'#ededed',
-        effectBack:'lg:before:bg-[#3c3c3b]',
+        effectBack:'before:bg-[#3c3c3b]',
         href:'https://adviters.com/ciberseguridad/artificial-intelligence-and-cybersecurity/',
         arrowName:'grey'
     },
@@ -52,7 +52,7 @@ export const aboutData:AboutData[] = [
         imgUrl: '/aboutPick/About4.jpg',
         back: '#0078ff',
         color:'#ededed',
-        effectBack:'lg:before:bg-[#0078ff]',
+        effectBack:'before:bg-[#0078ff]',
         href:'https://adviters.com/transformacion-digital/transforming-finance-and-insurance-with-generative-ai/',
         arrowName:'darkBlue'
     }

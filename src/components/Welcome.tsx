@@ -15,7 +15,7 @@ const Welcome: React.FC = () => {
 
   return (
   <div className='overflow-hidden' id="welcome" >
-      <a href='#' className='cursor-default group'>
+      <a href='https://adviters.com/contact/' target='_blank' className='group hover:courser-pointer'>
         <ParallaxProvider >
           <Parallax translateY={[-CSSEffect , CSSEffect ]} className={`flex justify-center items-center ${st.back}`}>
             <main className="relative w-full h-full px-10 max-w-screen-xl mx-auto md:flex md:justify-between pt-20">
@@ -40,10 +40,10 @@ const Welcome: React.FC = () => {
                 </p>
                 <div className="relative z-30 mt-8 transition-all duration-200 active:scale-95">
                   <a 
-                    href='https://adviters.com/careers-jobs/' target='_blank'
+                    href='https://adviters.com/contact/' target='_blank'
                     className={`
                       block w-fit text-xl lg:text-2xl py-1 px-4 rounded-md bg-AdBlue font-semibold hover:scale-105 hover:bg-AdDarkBlue  active:scale-95  
-                      transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove} 
+                      transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove} group-hover:scale-110 
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
                     `}
                   >

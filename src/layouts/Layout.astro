@@ -14,17 +14,38 @@ const { title } = Astro.props;
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <link rel="icon" type="image/png" href="svg/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="svg/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="svg/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="svg/favicon/apple-touch-icon.png" />
+    <link
+      rel='icon'
+      type='image/png'
+      href='svg/favicon/favicon-96x96.png'
+      sizes='96x96'
+    />
+    <link rel='icon' type='image/svg+xml' href='svg/favicon/favicon.svg' />
+    <link rel='shortcut icon' href='svg/favicon/favicon.ico' />
+    <link
+      rel='apple-touch-icon'
+      sizes='180x180'
+      href='svg/favicon/apple-touch-icon.png'
+    />
     <!-- <link rel="manifest" href="svg/favicon/site.webmanifest" /> -->
-    <link rel="preload" as="image" href="/back-cell-04.jpg">
-    <link rel="preload" as="image" href="/back-pc.jpg">
+    <link
+      rel='preload'
+      as='image'
+      href='/back-cell-04.jpg'
+      fetchpriority='high'
+      media='(max-width: 1023px)'
+    />
+    <link
+      rel='preload'
+      as='image'
+      href='/back-pc.jpg'
+      fetchpriority='high'
+      media='(min-width: 1024px)'
+    />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
-      *{
-        font-family: "Outfit", serif;
+      * {
+        font-family: 'Outfit', serif;
         font-optical-sizing: auto;
       }
       html {

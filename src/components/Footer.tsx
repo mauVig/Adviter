@@ -66,12 +66,12 @@ const Footer: react.FC = () => {
         
         <div className='sm:flex items-end justify-between mt-12 sm:-mt-12'>
           <div className='flex items-center'>
-            <img src={adIcons[3].src} alt='Adviter black logo' className='h-12' />
+            <img src={adIcons[3].src} alt='Adviter black logo' className='h-12 md:h-16 ' />
           </div>
           <div className='flex mt-16 sm:justify-center items-end sm:items-center'>
-            <img src='/footer/compliant.png' alt='Picture about HIPAA' className='h-12 scale-110' />
-            <img src='/footer/gptw.png' alt='Picture about gptw' className='w-12 mx-4' />
-            <img src='/footer/iram.png' alt='Picture about iram' className='w-12' />
+            <img src='/footer/compliant.png' alt='Picture about HIPAA' className='h-12 md:h-16  scale-110' />
+            <img src='/footer/gptw.png' alt='Picture about gptw' className='h-12 md:h-16  mx-4' />
+            <img src='/footer/iram.png' alt='Picture about iram' className='h-12 md:h-16 ' />
           </div>
         </div>
     </footer>

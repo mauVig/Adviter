@@ -1,32 +1,33 @@
-import { useEffect, useState, useRef, Fragment } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import ArrowsWeAre from './ArrowsWeAre.tsx';
 import { backArrows } from '@/data/icons.ts';
 
-const ArrowContainer = ({ version, top }) => {
-  const [position, setPosition] = useState({ left: 0, direction: 'right' });
-  // const [isVisible, setIsVisible] = useState(true);
-  const speed = Math.random() * 10 + 5; 
+const ArrowContainer = ({ version, top, left }) => {
+  const [direction, setDirection] = useState('right');
+  const elementRef = useRef(null);
 
   useEffect(() => {
-    // Posición inicial aleatoria
-    const randomLeft = 0;
-    // Dirección aleatoria
-    const randomDirection = Math.random() > 0.5 ? 'right' : 'left';
-    setPosition({ left: randomLeft, direction: randomDirection });
-  }, []);
+    const initialDirection = left < 0 ? 'right' : 'left';
+    setDirection(initialDirection);
+  }, [left]);
 
-  // Clases de animación basadas en la dirección
-  const animationClass = position.direction === 'right' 
+  // Animation class based on direction
+  const animationClass = direction === 'right' 
     ? 'animate-slide-right' 
     : 'animate-slide-left';
 
+  // Dynamic styles combining the passed left position with other styles
+  const styles = {
+    top: `${top}%`,
+    left: `${left}px`, // Using pixels since we're getting absolute values
+    animationDuration: `8s`,
+  };
+
   return (
-    <div 
-      className={`absolute transition-all duration-1000 ${animationClass}`}
-      style={{ 
-        top: `${top}%`,
-        left: `${position.left}%`,
-      }}
+    <div
+      ref={elementRef}
+      className={`absolute transition-all ${animationClass}`}
+      style={styles}
     >
       <ArrowsWeAre version={version} backArrows={backArrows} />
     </div>

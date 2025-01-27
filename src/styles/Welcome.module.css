@@ -1,6 +1,6 @@
 
 .back{
-    background: url('/back-cell-04.jpg');
+    background-image: url('/back-cell-04.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -8,8 +8,8 @@
     min-height: 100vh;
     position: relative;
     z-index: -10;
-    animation: myMoves var(--vel) infinite   ease-in-out;
-    -webkit-animation: myMoves var(--vel) infinite   ease-in-out;
+    animation: myMoves var(--vel) infinite ease-in-out;
+    -webkit-animation: myMoves var(--vel) infinite ease-in-out;
 }
 
 @media (width >= 1024px) {

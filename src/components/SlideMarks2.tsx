@@ -33,7 +33,7 @@ const SlideMarks2: React.FC = () => {
         <div className="mx-auto py-4 lg:py-16 px-10 xl:px-0">
             <div className="max-w-screen-2xl mx-auto flex flex-col mid:flex-row text-center mid:text-left items-center justify-around lg:justify-between px-10 3xl:px-0">
                 <div >
-                    <h2 className="block pt-4 text-AdBlue font-bold text-2xl sm:text-4xl  transition-all duration-300 ease-out mb-10  ">
+                    <h2 className="block pt-8 text-AdBlue font-bold text-2xl sm:text-4xl  transition-all duration-300 ease-out mb-10  ">
                         Our <br />Partners
                     </h2>
                 </div>

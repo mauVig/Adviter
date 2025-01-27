@@ -1,18 +1,6 @@
 ---
 import { aboutData } from '@/data/About';
 import { ArrButtons } from './ArrButtons';
-
-const isMobile = `
-  function getStyles(data) {
-    if (window.innerWidth < 1024) {
-      return {
-        backgroundColor: data.back,
-        color: data.color
-      };
-    }
-    return {};
-  }
-`;
 ---
 
 <div class='bg-textGray relative'>
@@ -24,13 +12,13 @@ const isMobile = `
     aboutData.map((data) => (
       <a href={data.href} target='_blank' class='cursor-pointer group'>
         <div
-          class={`py-4 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 before:z-0 scroll-effect`}
+          class={`py-4 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 scroll-effect`}
           id={`about-${data.title}`}
         >
           <div class='max-w-screen-2xl mx-auto relative px-10 3xl:px-0'>
             <div class='flex items-center gap-2 mid:gap-6'>
               <div class='font-bold col-span-2 row-span-4 flex items-start'>
-                <h2 class='mid:text-xl md:text-2xl xl:text-3xl font-bold flex items-center relative z-10 h-20 lg:transition-colors lg:duration-300 '>
+                <h2 class='mid:text-xl md:text-2xl xl:text-3xl font-bold flex items-center relative z-10 h-20 transition-colors duration-300'>
                   {data.title}
                 </h2>
               </div>
@@ -53,13 +41,12 @@ const isMobile = `
   }
 </div>
 
-<script define:vars={{ aboutData, isMobile }}>
-  eval(isMobile);
+<script define:vars={{ aboutData }}>
 
   aboutData.forEach((data) => {
     const element = document.getElementById(`about-${data.title}`);
     if (element) {
-      Object.assign(element.style, getStyles(data));
+      Object.assign(element.style);
     }
   });
 
@@ -67,7 +54,7 @@ const isMobile = `
     aboutData.forEach((data) => {
       const element = document.getElementById(`about-${data.title}`);
       if (element) {
-        Object.assign(element.style, getStyles(data));
+        Object.assign(element.style);
       }
     });
   });
@@ -86,17 +73,12 @@ const isMobile = `
 
       if (entry.isIntersecting) {
         element.classList.add('scroll-active');
-        img.classList.add('image-visible');
-
-        if (window.innerWidth >= 1024) {
-          textElements.forEach((el) => (el.style.color = '#ededed'));
-        }
+        img?.classList.add('image-visible');
+        textElements.forEach((el) => (el.style.color = '#ededed'));
       } else {
         element.classList.remove('scroll-active');
-        img.classList.remove('image-visible');
-        if (window.innerWidth >= 1024) {
-          textElements.forEach((el) => (el.style.color = ''));
-        }
+        img?.classList.remove('image-visible');
+        textElements.forEach((el) => (el.style.color = ''));
       }
     });
   }, observerOptions);
@@ -108,39 +90,22 @@ const isMobile = `
 </script>
 
 <style>
-  @media (width >= 1023px) {
-    .blog-image {
-      opacity: 0;
-      transform: translateY(5.5rem);
-    }
-
-    .scroll-effect::before {
-      transition: width 0.3s ease-in-out;
-    }
-
-    .scroll-active::before {
-      width: 100% !important;
-    }
-
-    .scroll-active * {
-      color: #ededed !important;
-    }
+  .blog-image {
+    opacity: 0;
+    transform: translateY(2.5rem);
   }
 
-  @media (width <= 1024px) {
-    .blog-image {
-      opacity: 0;
-      transform: translateY(2.5rem);
-    }
-
-    .scroll-effect::before {
-      transition: width 0.3s ease-in-out;
-    }
-
-    .scroll-active::before {
-      width: 100% !important;
-    }
+  .scroll-effect::before {
+    transition: width 0.3s ease-in-out !important;
   }
+
+  .scroll-active::before {
+    width: 100% !important;
+  }
+
+  /* .scroll-active * {
+    color: #ededed !important;
+  } */
 
   .image-visible {
     opacity: 1 !important;
