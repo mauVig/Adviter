@@ -17,8 +17,8 @@ export const aboutData:AboutData[] = [
         title: 'Optimizing the customer experience: the role of AI in ecommerce',
         description: 'AI in ecommerce optimizes the customer experience with personalization, fast attention and more effective searches.',
         imgUrl: '/aboutPick/About1.jpg',
-        back: '#ededed',
-        color:'#0078ff',
+        back: '#0078ff',
+        color:'#ededed',
         effectBack:'lg:before:bg-[#0078ff]',
         href:'https://adviters.com/transformacion-digital/smart-ecommerce-ai/',
         arrowName:'darkBlue'
@@ -29,7 +29,7 @@ export const aboutData:AboutData[] = [
         description: 'AI is transforming the way financial institutions approach fraud detection and prevention. Discover the key points on this topic in this article.',
         imgUrl: '/aboutPick/About2.jpg',
         back: '#000755',
-        color:'#0078ff',
+        color:'#ededed',
         effectBack:'lg:before:bg-[#000755]',
         href:'https://adviters.com/finance/financial-fraud-detection-with-artificial-intelligence/',
         arrowName:'blue'

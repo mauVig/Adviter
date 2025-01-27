@@ -3,8 +3,8 @@ import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';  
 import { marksOfClients } from '@/data/MarksOfClients'  
 
-const FAST_SPEED = 500;
-const SLOW_SPEED = 950;
+const FAST_SPEED = 400;
+const SLOW_SPEED = 750;
 
 const SlideMarksAll:React.FC = () => {  
     const sectionRef = useRef<HTMLDivElement>(null); 
@@ -159,9 +159,9 @@ const SlideMarksAll:React.FC = () => {
                 {marksOfClients.map((mark) => (  
                     <SwiperSlide key={mark.id} className='flex items-center h-full '>  
                         <div 
-                            className="transition-opacity duration-700 ease-out "
+                            className="transition-opacity duration-700 ease-out grayscale"
                             style={{
-                                // opacity: imagesOpacity,
+                                opacity: imagesOpacity,
                                 willChange: 'opacity'
                             }}
                         >  

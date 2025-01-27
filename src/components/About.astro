@@ -16,41 +16,39 @@ const isMobile = `
 ---
 
 <div class='bg-textGray relative'>
-  <div class="absolute -top-10 left-0 px-10 flex justify-between w-full">
-    <h3 class="text-base mid:text-xl md:text-2xl text-textGray">News</h3>
-    <h3 class="hidden lg:block text-2xl text-textGray">News</h3>
+  <div class='absolute -top-10 left-0 px-10 flex justify-between w-full'>
+    <h3 class='text-base mid:text-xl md:text-2xl text-textGray'>News</h3>
+    <h3 class='hidden lg:block text-2xl text-textGray'>News</h3>
   </div>
   {
     aboutData.map((data) => (
-     <a href={data.href} target="_blank" class="cursor-pointer group">
-       <div
-         class={`p-10 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 before:z-0 scroll-effect`}
-         id={`about-${data.title}`}
-       >
-         <div class='grid grid-cols-4 gap-5 sm:gap-10 py-2 max-w-screen-2xl mx-auto relative'>
-           <div class='col-span-2 grid grid-rows-5'>
-             <div class='font-bold col-span-2 row-span-4 flex items-start'>
-               <h2 class='text-xl md:text-3xl lg:text-AdDarkBlue lg:text-4xl font-bold flex items-center relative z-10 h-20 max-w-[400px] lg:transition-colors lg:duration-300'>
-                 {data.title}
-               </h2>
-             </div>
-             <div class='row-span-1 z-20 mb-8 '>
-               <ArrButtons whitch={data.arrowName}/>
-             </div>
-           </div>
-           <div class='col-span-2 lg:col-span-1'>
-             <img
-               src={data.imgUrl}
-               alt={`Picture about ${data.title}`}
-               class='sm:w-72 blog-image transition-all duration-500 ease-out'
-             />
-           </div>
-           <p class='text-xs hidden lg:block lg:text-lg lg:leading-6 lg:text-AdDarkBlue font-medium relative z-10 transition-colors duration-300'>
-             {data.description}
-           </p>
-         </div>
-       </div>
-     </a>
+      <a href={data.href} target='_blank' class='cursor-pointer group'>
+        <div
+          class={`py-4 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 before:z-0 scroll-effect`}
+          id={`about-${data.title}`}
+        >
+          <div class='max-w-screen-2xl mx-auto relative px-10 3xl:px-0'>
+            <div class='flex items-center gap-2 mid:gap-6'>
+              <div class='font-bold col-span-2 row-span-4 flex items-start'>
+                <h2 class='mid:text-xl md:text-2xl xl:text-3xl font-bold flex items-center relative z-10 h-20 lg:transition-colors lg:duration-300 '>
+                  {data.title}
+                </h2>
+              </div>
+              <img
+                src={data.imgUrl}
+                alt={`Picture about ${data.title}`}
+                class='w-24 md:w-32 blog-image transition-all duration-500 ease-out hidden mid2:block'
+              />
+              <div>
+                <ArrButtons
+                  whitch={data.arrowName}
+                  myClass='scale-75 md:scale-100'
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
     ))
   }
 </div>
@@ -58,7 +56,6 @@ const isMobile = `
 <script define:vars={{ aboutData, isMobile }}>
   eval(isMobile);
 
-  // Función para aplicar estilos móviles
   aboutData.forEach((data) => {
     const element = document.getElementById(`about-${data.title}`);
     if (element) {
@@ -75,7 +72,6 @@ const isMobile = `
     });
   });
 
-  // Configuración del Intersection Observer
   const observerOptions = {
     root: null,
     rootMargin: '0px',
@@ -91,7 +87,7 @@ const isMobile = `
       if (entry.isIntersecting) {
         element.classList.add('scroll-active');
         img.classList.add('image-visible');
-        
+
         if (window.innerWidth >= 1024) {
           textElements.forEach((el) => (el.style.color = '#ededed'));
         }
@@ -112,10 +108,10 @@ const isMobile = `
 </script>
 
 <style>
-  @media (width > 1023px) {
+  @media (width >= 1023px) {
     .blog-image {
       opacity: 0;
-      transform: translateY(2.5rem);
+      transform: translateY(5.5rem);
     }
 
     .scroll-effect::before {
@@ -124,10 +120,6 @@ const isMobile = `
 
     .scroll-active::before {
       width: 100% !important;
-    }
-
-    .mobile-animation {
-      animation: none;
     }
 
     .scroll-active * {
@@ -148,12 +140,10 @@ const isMobile = `
     .scroll-active::before {
       width: 100% !important;
     }
-
-   
   }
 
   .image-visible {
     opacity: 1 !important;
-    transform: translateY(-5rem) !important;
+    transform: translateY(0) !important;
   }
 </style>

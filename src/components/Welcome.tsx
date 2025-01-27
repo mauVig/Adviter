@@ -38,11 +38,11 @@ const Welcome: React.FC = () => {
                 >
                   We are driving the digital transformation for tomorrow, today
                 </p>
-                <div className="relative z-30  transition-all duration-200 active:scale-95">
+                <div className="relative z-30 mt-8 transition-all duration-200 active:scale-95">
                   <a 
                     href='https://adviters.com/careers-jobs/' target='_blank'
                     className={`
-                      text-xl lg:text-2xl py-1 lg:mt-4 px-4 rounded-md bg-AdBlue font-semibold hover:scale-105 hover:bg-AdDarkBlue  active:scale-95  
+                      block w-fit text-xl lg:text-2xl py-1 px-4 rounded-md bg-AdBlue font-semibold hover:scale-105 hover:bg-AdDarkBlue  active:scale-95  
                       transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove} 
                       ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
                     `}

@@ -32,11 +32,13 @@ const ChangeBack = () => {
       const windowHeight = window.innerHeight;
       
       // Lógica para el cambio de fondo
+      const colorChangeThreshold = window.innerWidth > 768 ? 0.5 : 0.1;
+
       let backgroundProgress = 0;
-      if (rect.top <= -windowHeight * 0.5) {
+      if (rect.top <= -windowHeight * colorChangeThreshold) {
         backgroundProgress = Math.min(
           1,
-          (-windowHeight * 0.5 - rect.top) / (windowHeight * 0.3)
+          (-windowHeight * colorChangeThreshold - rect.top) / (windowHeight * 0.3)
         );
       }
 
@@ -106,10 +108,13 @@ const ChangeBack = () => {
           />
         ))}
       </div>
-
-      <section 
+      {/* <section 
         ref={sectionRef}
         className="text-textGray text-center min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10 mb-64"
+      > */}
+      <section 
+        ref={sectionRef}
+        className="text-textGray text-center pt-16 min-h-[50vh] md:min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10 mb-64"
       >
         <h2 className="text-2xl  xs:text-3xl mid:text-4xl  md:text-5xl xl:text-6xl ">
           {words.map((word, index) => (

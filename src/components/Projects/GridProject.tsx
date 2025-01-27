@@ -61,7 +61,7 @@ const GridProject: React.FC<GridProjectProps> = ({dataProject}) => {
                     target='_blank'  
                     rel='noreferrer'  
                     download 
-                    className='group' 
+                    className='group drop-shadow-lg' 
                 > 
                     <div  
                         ref={el => { 

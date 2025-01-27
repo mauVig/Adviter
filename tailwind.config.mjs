@@ -38,11 +38,13 @@ export default {
 		screens: {
 			'xs': '375px',
 			'mid':'475px',
-			'sm': '640px',
+			'mid2':'564px',
+			'sm': '640px',			
 			'md': '768px',
 			'lg': '1024px',
 			'xl': '1280px',
 			'2xl': '1536px',
+			'3xl': '1616px'
 		},
 	},
 	plugins: [],

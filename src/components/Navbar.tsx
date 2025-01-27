@@ -71,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
               <a href="https://adviters.com/about/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>About</li>
               </a>
-              <a href="https://adviters.com/careers-jobs/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href="https://adviters.com/careers-jobs/" target='_blank' className='pl-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Careers</li>
               </a>
             </ul>
@@ -79,7 +79,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
 
         
 
-          <label className='bg-AdBlue rounded-md relative ml-1 z-40 xl:hidden block'>
+          <label className='bg-AdBlue rounded-md relative z-40 block xl:hidden '>
             <div className="w-[43px] h-[43px] cursor-pointer flex flex-col items-center justify-center">
               <input
                 className="hidden peer"
@@ -94,11 +94,11 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
         </div>
 
         <div 
-          className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center flex-col   items-center text-4xl mid:text-6xl text-center z-[500] transition-all duration-500 ease-in-out
+          className={`absolute top-0 left-0 w-full h-screen bg-textBlack text-textGray flex justify-center flex-col items-center text-4xl mid:text-6xl text-center z-[500] transition-all duration-500 ease-in-out
             ${check ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}`}
           >
           <button 
-            className="absolute right-10 top-10" 
+            className="absolute right-8 top-6" 
             onClick={() => setCheck(false)}
             >
             <div className="border-[1px] w-[40px] h-1 bg-textGray rotate-45 translate-y-[0.35rem]"></div>
