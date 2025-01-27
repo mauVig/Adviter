@@ -97,7 +97,7 @@ const Projects: React.FC = () => {
             >
                 Effective solutions
             </p>  
-            <div className="projects-list md:pb-32  px-0 lg:px-10 2xl:px-0">  
+            <div className=" md:pb-32  px-0 lg:px-10 2xl:px-0">  
                 {isMobile ? <SlideProject dataProject={dataProject} /> : <GridProject dataProject={dataProject}  />}  
             </div>  
         </section>  

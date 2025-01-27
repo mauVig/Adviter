@@ -130,7 +130,7 @@ const SlideMarksAll:React.FC = () => {
             >
                 <h2  
                     ref={titleRef}
-                    className='text-AdBlue font-bold text-4xl text-center transition-all duration-300 ease-out' 
+                    className='text-AdBlue font-bold text-3xl sm:text-4xl  text-center transition-all duration-300 ease-out' 
                     style={{ 
                         opacity: titleOpacity, 
                         transform: `scale(${titleScale})`, 

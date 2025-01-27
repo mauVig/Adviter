@@ -43,7 +43,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
         }}  
         >
           {dataProject.map((projectOne, index) => (
-            <SwiperSlide key={projectOne.id} className="px-4">
+            <SwiperSlide key={projectOne.id} className="px-4 pb-[50px]">
               <div className="w-full relative">
                 <img
                   src={typeof projectOne.urlCellImg === 'string' ? projectOne.urlCellImg : ''}
@@ -81,7 +81,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
                       download
                       className="bg-AdBlue text-textGray px-6 py-1 rounded-2xl"
                     >
-                      Ver más
+                      Learn more
                     </a>
                   </div>
                   <p className="font-bold text-AdBlue text-xs block pt-2 whitespace-pre-line leading-[0.8rem] h-16">

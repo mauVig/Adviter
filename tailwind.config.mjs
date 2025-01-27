@@ -5,12 +5,12 @@ export default {
 		extend: {
 			keyframes: {
 				'slide-right': {
-					'0%': { transform: 'translateX(0)' },
+					'0%': { transform: 'translateX(150vw)' },
 					'100%': { transform: 'translateX(150vw)' }
 				  },
 				  'slide-left': {
-					'0%': { transform: 'translateX(0)' },
-					'100%': { transform: 'translateX(-150vw)' }
+					'0%': { transform: 'translateX(150vw)' },
+					'100%': { transform: 'translateX(-150vw)' } 
 				},
 				'slide-loop': {
                     '0%': { transform: 'translateX(0)' },
