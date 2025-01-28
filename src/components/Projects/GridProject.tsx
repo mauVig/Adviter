@@ -6,6 +6,7 @@ interface Project {
   maker: string; 
   urlImg: string; 
   urlMarks?: string; 
+  urlMarksDesk?: string;
   pdf?: string; 
 } 
 
@@ -84,9 +85,9 @@ const GridProject: React.FC<GridProjectProps> = ({dataProject}) => {
                                 loading="lazy"
                            /> 
                             <div className="absolute inset-0 bg-textGray opacity-0 group-hover:opacity-90 transition-all duration-300 group-hover:scale-150 flex items-center justify-center"> 
-                                {projectOne.urlMarks && ( 
+                                {projectOne.urlMarksDesk && ( 
                                     <img 
-                                        src={projectOne.urlMarks} 
+                                        src={projectOne.urlMarksDesk} 
                                         alt={`Marks for ${projectOne.title}`} 
                                         className="w-1/2 h-auto relative z-40" 
                                     /> 

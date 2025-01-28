@@ -6,6 +6,7 @@ export interface Project {
     urlImg: string;
     urlCellImg: string;
     urlMarks: string;
+    urlMarksDesk: string;
     pdf: string;
 }
 
@@ -17,6 +18,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Swiss.jpg',
         urlCellImg:'/projects/img/cell/Swiss.jpg',
         urlMarks:'/projects/marks/Swiss.png',
+        urlMarksDesk:'/projects/marks/pc/Swiss.png',
         pdf:'/projects/pdf/SMG.pdf',
     },
     {
@@ -26,6 +28,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Comafi.jpg',
         urlCellImg:'/projects/img/cell/Comafi.jpg',
         urlMarks:'/projects/marks/Comafi.png',
+        urlMarksDesk:'/projects/marks/pc/Comafi.png',
         pdf:'/projects/pdf/Comafi.pdf',
     },
     {
@@ -35,6 +38,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Mater.jpg',
         urlCellImg:'/projects/img/cell/Mater.jpg',
         urlMarks:'/projects/marks/Meter.png',
+        urlMarksDesk:'/projects/marks/pc/Meter.png',
         pdf:'/projects/pdf/MATERDEI.pdf',
     },
     {
@@ -44,6 +48,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Efecty.jpg',
         urlCellImg:'/projects/img/cell/Efecty.jpg',
         urlMarks:'/projects/marks/Efecty.png',
+        urlMarksDesk:'/projects/marks/pc/Efecty.png',
         pdf:'/projects/pdf/EFECTY.pdf',
     },
     {
@@ -53,6 +58,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Gador.jpg',
         urlCellImg:'/projects/img/cell/Gador.jpg',
         urlMarks:'/projects/marks/Gador.png',
+        urlMarksDesk:'/projects/marks/pc/Gador.png',
         pdf:'/projects/pdf/GADOR.pdf',
     },
     {
@@ -62,6 +68,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Gasnor.jpg',
         urlCellImg:'/projects/img/cell/Gasnor.jpg',
         urlMarks:'/projects/marks/Gasnor.png',
+        urlMarksDesk:'/projects/marks/pc/Gasnor.png',
         pdf:'/projects/pdf/GASNOR.pdf',
     },
     {
@@ -71,6 +78,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Tgn.jpg',
         urlCellImg:'/projects/img/cell/Tgn.jpg',
         urlMarks:'/projects/marks/Tgn.png',
+        urlMarksDesk:'/projects/marks/pc/Tgn.png',
         pdf:'/projects/pdf/TGN.pdf',
     },
     {
@@ -80,6 +88,7 @@ export const dataProject: Project[] = [
         urlImg:'/projects/img/Ank.jpg',
         urlCellImg:'/projects/img/cell/Ank.jpg',
         urlMarks:'/projects/marks/Ank.png',
+        urlMarksDesk:'/projects/marks/pc/Ank.png',
         pdf:'/projects/pdf/ANK.pdf',
     }
 ]
