@@ -144,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
             </a>
           </ul>
           <a 
-            href='https://adviters.com/careers-jobs/' target='_blank'
+            href='https://adviters.com/contact/' target='_blank'
             className={`py-2 px-4 mt-[32px] text-xl mid:text-3xl rounded-md text-textGray bg-AdBlue font-semibold truncate delay-[1000ms] transition-all ease-in-out ${check ? 'opacity-100 translate-y-0' : 'duration-1000 opacity-0 translate-y-10'}`}
             onClick={() => setCheck(false)}
             >

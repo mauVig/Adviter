@@ -10,9 +10,29 @@ import Careers from '@/components/Careers.astro';
 import Footer from '@/components/Footer';
 import SlideMarksAll from '@/components/SlideMarksAll';
 import { adIcons } from '@/data/icons';
+
+const loaderStyles = `
+  .loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(31, 31, 31, 1);
+    z-index: 9999;
+    transition: opacity 2s ease-out, visibility 2s ease-out;
+  }
+
+  .loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+`;
 ---
 
 <Layout title='Adviter'>
+  <div id="loader" class="loader"></div>
+
   <Navbar client:load currentIcon={adIcons[0]} />
   <Welcome client:only />
   <ChangeBack client:only />
@@ -23,3 +43,15 @@ import { adIcons } from '@/data/icons';
   <Careers />
   <Footer />
 </Layout>
+
+<style set:html={loaderStyles}></style>
+
+<script>
+  // Definimos la función global
+  window.hideLoader = function() {
+    const loader = document.getElementById('loader');
+    if (loader) {
+      loader.classList.add('hidden');
+    }
+  };
+</script>
