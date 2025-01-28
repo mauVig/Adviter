@@ -2,7 +2,6 @@ import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import st from '@/styles/Welcome.module.css'
 import { useEffect, useState } from 'react';
 
-// Declaramos el tipo para window
 declare global {
   interface Window {
     hideLoader: () => void;
@@ -19,7 +18,6 @@ const Welcome: React.FC = () => {
       const imageToLoad = new Image();
       
       imageToLoad.onload = () => {
-        // Llamamos a la función global cuando la imagen se carga
         window.hideLoader();
         setIsVisible(true);
       };

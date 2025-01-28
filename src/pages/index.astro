@@ -20,7 +20,7 @@ const loaderStyles = `
     height: 100%;
     background-color: rgba(31, 31, 31, 1);
     z-index: 9999;
-    transition: opacity 2s ease-out, visibility 2s ease-out;
+    transition: opacity .5s ease-out, visibility .5s ease-out;
   }
 
   .loader.hidden {
@@ -47,7 +47,6 @@ const loaderStyles = `
 <style set:html={loaderStyles}></style>
 
 <script>
-  // Definimos la función global
   window.hideLoader = function() {
     const loader = document.getElementById('loader');
     if (loader) {
