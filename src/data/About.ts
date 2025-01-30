@@ -1,3 +1,4 @@
+import { constantsLinks } from '@/data/contanstLinks';
 
 interface AboutData {
     id: number;
@@ -20,7 +21,7 @@ export const aboutData:AboutData[] = [
         back: '#0078ff',
         color:'#ededed',
         effectBack:'before:bg-[#0078ff]',
-        href:'https://adviters.com/transformacion-digital/smart-ecommerce-ai/',
+        href:`${constantsLinks}/transformacion-digital/smart-ecommerce-ai/`,
         arrowName:'darkBlue'
     },
     {
@@ -31,7 +32,7 @@ export const aboutData:AboutData[] = [
         back: '#000755',
         color:'#ededed',
         effectBack:'before:bg-[#000755]',
-        href:'https://adviters.com/finance/financial-fraud-detection-with-artificial-intelligence/',
+        href:`${constantsLinks}/finance/financial-fraud-detection-with-artificial-intelligence/`,
         arrowName:'blue'
     },
     {
@@ -42,7 +43,7 @@ export const aboutData:AboutData[] = [
         back: '#3c3c3b',
         color:'#ededed',
         effectBack:'before:bg-[#3c3c3b]',
-        href:'https://adviters.com/ciberseguridad/artificial-intelligence-and-cybersecurity/',
+        href:`${constantsLinks}ciberseguridad/artificial-intelligence-and-cybersecurity/`,
         arrowName:'grey'
     },
     {
@@ -53,7 +54,7 @@ export const aboutData:AboutData[] = [
         back: '#0078ff',
         color:'#ededed',
         effectBack:'before:bg-[#0078ff]',
-        href:'https://adviters.com/transformacion-digital/transforming-finance-and-insurance-with-generative-ai/',
+        href:`${constantsLinks}transformacion-digital/transforming-finance-and-insurance-with-generative-ai/`,
         arrowName:'darkBlue'
     }
 ]

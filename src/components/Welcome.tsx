@@ -1,6 +1,7 @@
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import st from '@/styles/Welcome.module.css'
 import { useEffect, useState } from 'react';
+import { constantsLinks } from '@/data/contanstLinks';
 
 declare global {
   interface Window {
@@ -31,10 +32,10 @@ const Welcome: React.FC = () => {
 
     checkViewportAndLoadImage();
   }, []);
-
+  
   return (
     <div className='overflow-hidden' id="welcome">
-      <a href='https://adviters.com/contact/' target='_blank' className='group hover:courser-pointer'>
+      <a href={`${constantsLinks}/contact`} className='group hover:courser-pointer'>
         <ParallaxProvider>
           <Parallax translateY={[-CSSEffect, CSSEffect]} className={`flex justify-center items-center ${st.back}`}>
             <main className="relative w-full h-full px-10 max-w-screen-xl mx-auto md:flex md:justify-between pt-20">

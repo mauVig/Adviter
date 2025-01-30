@@ -1,5 +1,6 @@
 import react from 'react';
 import { adIcons } from '@/data/icons';
+import { constantsLinks } from '@/data/contanstLinks';
 
 const Footer: react.FC = () => {
   return (
@@ -7,23 +8,22 @@ const Footer: react.FC = () => {
         <div className='mid:flex justify-between'>
 
           <div className='flex mid:justify-center gap-16 mb-16'>
-
            <div>
              <h3 className='mb-2'>Explorer</h3>
              <ul>
-               <a href='#service' target='_blank' className='font-bold'>
+               <a href='#service' className='font-bold'>
                  <li>Services</li>
                </a>
-               <a href='#projects' target='_blank' className='font-bold truncate'>
+               <a href='#projects' className='font-bold truncate'>
                  <li>Out Work</li>
                </a>
-                <a href='https://adviters.com/pulse/' target='_blank' className='font-bold'>
+                <a href={`${constantsLinks}/pulse/`} className='font-bold'>
                  <li>News</li>
                </a>
-               <a href='https://adviters.com/about/' target='_blank' className='font-bold'>
+               <a href={`${constantsLinks}/about/`} className='font-bold'>
                  <li>About</li>
                </a>
-               <a href='https://adviters.com/careers-jobs/' target='_blank' className='font-bold'>
+               <a href={`${constantsLinks}/careers-jobs/`} className='font-bold'>
                  <li>Careers</li>
                </a>
              </ul>

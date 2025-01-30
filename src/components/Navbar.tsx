@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import type { Arrow } from '@/data/icons';
 import st from '@/styles/navBar.module.css';
+import { constantsLinks } from '@/data/contanstLinks';
+
 
 const useScrollDirection = () => {
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down'>('up');
@@ -65,13 +67,13 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
               <a href="#projects" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Our work</li>
               </a>
-              <a href="https://adviters.com/pulse/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href={`${constantsLinks}/pulse`}  className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>News</li>
               </a>
-              <a href="https://adviters.com/about/" target='_blank' className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href={`${constantsLinks}/about`}  className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>About</li>
               </a>
-              <a href="https://adviters.com/careers-jobs/" target='_blank' className='pl-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href={`${constantsLinks}/careers-jobs`} className='pl-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Careers</li>
               </a>
             </ul>
@@ -121,30 +123,32 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
             >
               <li>Our work</li>
             </a>
+            
             <a 
-              href="https://adviters.com/pulse/" target='_blank' 
+              href={`${constantsLinks}/pulse`} 
               className={`block hover:text-AdBlue hover:scale-110 delay-[500ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
               onClick={() => setCheck(false)}
             >
               <li>News</li>
             </a>
             <a 
-              href="https://adviters.com/about/"  target='_blank'
+              href={`${constantsLinks}/about`}  
               className={`block hover:text-AdBlue hover:scale-110 delay-[600ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
               onClick={() => setCheck(false)}
             >
               <li>About</li>
             </a>
             <a 
-              href="https://adviters.com/careers-jobs/" target='_blank'
+              href={`${constantsLinks}/careers-jobs`}
               className={`block hover:text-AdBlue hover:scale-110 delay-[700ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
               onClick={() => setCheck(false)}
             >
               <li>Careers</li>
             </a>
           </ul>
+          
           <a 
-            href='https://adviters.com/contact/' target='_blank'
+            href={`${constantsLinks}/contact`}
             className={`py-2 px-4 mt-[32px] text-xl mid:text-3xl rounded-md text-textGray bg-AdBlue font-semibold truncate delay-[1000ms] transition-all ease-in-out ${check ? 'opacity-100 translate-y-0' : 'duration-1000 opacity-0 translate-y-10'}`}
             onClick={() => setCheck(false)}
             >
