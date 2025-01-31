@@ -1,1 +1,1 @@
-export const constantsLinks = 'https://staging.adviters.com'
+export const constantsLinks = 'https://adviters.com'
