@@ -43,7 +43,7 @@ export const aboutData:AboutData[] = [
         back: '#3c3c3b',
         color:'#ededed',
         effectBack:'before:bg-[#3c3c3b]',
-        href:`${constantsLinks}ciberseguridad/artificial-intelligence-and-cybersecurity/`,
+        href:`${constantsLinks}/ciberseguridad/artificial-intelligence-and-cybersecurity/`,
         arrowName:'grey'
     },
     {
@@ -54,7 +54,7 @@ export const aboutData:AboutData[] = [
         back: '#0078ff',
         color:'#ededed',
         effectBack:'before:bg-[#0078ff]',
-        href:`${constantsLinks}transformacion-digital/transforming-finance-and-insurance-with-generative-ai/`,
+        href:`${constantsLinks}/transformacion-digital/transforming-finance-and-insurance-with-generative-ai/`,
         arrowName:'darkBlue'
     }
 ]

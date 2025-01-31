@@ -15,7 +15,7 @@ const Footer: react.FC = () => {
                  <li>Services</li>
                </a>
                <a href='#projects' className='font-bold truncate'>
-                 <li>Out Work</li>
+                 <li>Our Work</li>
                </a>
                 <a href={`${constantsLinks}/pulse/`} className='font-bold'>
                  <li>News</li>
@@ -32,15 +32,9 @@ const Footer: react.FC = () => {
            <div className='col-span-3 sm:col-span-2'>
               <h3 className='mb-2'>Office</h3>
               <ul>
-                <a href='' className='font-bold truncate'>
-                  <li>North America</li>
-                </a>
-                <a href='' className='font-bold'>
-                  <li>Europe</li>
-                </a>
-                <a href='' className='font-bold'>
-                  <li>Latam</li>
-                </a>
+                  <li className='font-bold truncate'>North America</li>
+                  <li  className='font-bold'>Europe</li>
+                  <li  className='font-bold'>Latam</li>
               </ul>
             </div>
           </div>
