@@ -17,13 +17,13 @@ const Footer: react.FC = () => {
                <a href='#projects' className='font-bold truncate'>
                  <li>Our Work</li>
                </a>
-                <a href={`${constantsLinks}/pulse/`} className='font-bold'>
+                <a href={`${constantsLinks}/pulse`} className='font-bold'>
                  <li>News</li>
                </a>
-               <a href={`${constantsLinks}/about/`} className='font-bold'>
+               <a href={`${constantsLinks}/about`} className='font-bold'>
                  <li>About</li>
                </a>
-               <a href={`${constantsLinks}/careers-jobs/`} className='font-bold'>
+               <a href={`${constantsLinks}/careers-jobs`} className='font-bold'>
                  <li>Careers</li>
                </a>
              </ul>
@@ -39,18 +39,18 @@ const Footer: react.FC = () => {
             </div>
           </div>
 
-          <div className='text-left sm:text-right col-span-4 sm:col-span-1'>
+          <div className='text-left mid:text-right col-span-4 sm:col-span-1'>
             <ul>
-              <a href='https://www.linkedin.com/company/adviters/?viewAsMember=true' target='_blank'>
+              <a href='https://www.linkedin.com/company/adviters/?viewAsMember=true'>
                 <li>Linkedin</li>
               </a>
-              <a href='https://www.linkedin.com/company/adviters/?viewAsMember=true' target='_blank'>
+              <a href='https://www.instagram.com/adviters_/'>
                 <li>Instagram</li>
               </a>
-              <a href='https://www.youtube.com/channel/UC1WYkcUf7ZwLTwUi7QNR6og' target='_blank'>
+              <a href='https://www.youtube.com/channel/UC1WYkcUf7ZwLTwUi7QNR6og'>
                 <li>Youtube</li>
               </a>
-              <a href='mailto:info@adviters.com' className='block pt-6' target='_blank'>
+              <a href='mailto:info@adviters.com' className='block pt-6'>
                 info@adviters.com
               </a>
             </ul>

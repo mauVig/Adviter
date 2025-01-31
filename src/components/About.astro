@@ -10,7 +10,7 @@ import { ArrButtons } from './ArrButtons';
   </div>
   {
     aboutData.map((data) => (
-      <a href={data.href} target='_blank' class='cursor-pointer group'>
+      <a href={data.href}  class='cursor-pointer group'>
         <div
           class={`py-4 relative before:absolute before:top-0 before:right-0 before:h-full ${data.effectBack} before:transition-[width] before:duration-300 before:ease-in-out before:w-9 scroll-effect`}
           id={`about-${data.title}`}
