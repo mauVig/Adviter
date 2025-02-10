@@ -56,8 +56,8 @@ const Welcome: React.FC = () => {
                 </p>
                 <div className="relative z-30 mt-8 transition-all duration-200 active:scale-95">
                   <button className={`
-                    block w-fit text-xl lg:text-2xl py-1 px-4 rounded-md bg-AdBlue font-semibold hover:scale-105 hover:bg-AdDarkBlue active:scale-95
-                    transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove} group-hover:scale-110
+                    block w-fit text-xl lg:text-2xl py-1 px-4 rounded-md bg-AdBlue font-semibold  hover:bg-AdDarkBlue active:scale-95
+                    transform transition-all duration-1000 ease-out delay-500 ${st.opositeMove} group-active:scale-90 
                     ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'}
                   `}>
                     CONTACT US

@@ -1,6 +1,7 @@
 ---
 import { aboutData } from '@/data/About';
 import { ArrButtons } from './ArrButtons';
+
 ---
 
 <div class='bg-textGray relative'>
@@ -16,8 +17,8 @@ import { ArrButtons } from './ArrButtons';
           id={`about-${data.title}`}
         >
           <div class='max-w-screen-2xl mx-auto relative px-10 3xl:px-0'>
-            <div class='flex items-center gap-2 mid:gap-6'>
-              <div class='font-bold col-span-2 row-span-4 flex items-start'>
+            <div class='flex items-center gap-2 h-[160px]'>
+              <div class='font-bold sm:w-3/4 xl:w-1/2'>
                 <h2 class='mid:text-xl md:text-2xl xl:text-3xl font-bold flex items-center relative z-10 h-20 transition-colors duration-300'>
                   {data.title}
                 </h2>
@@ -25,7 +26,7 @@ import { ArrButtons } from './ArrButtons';
               <img
                 src={data.imgUrl}
                 alt={`Picture about ${data.title}`}
-                class='w-24 md:w-32 blog-image transition-all duration-500 ease-out hidden mid2:block'
+                class='w-32 blog-image transition-all duration-500 ease-out hidden mid2:block'
               />
               <div>
                 <ArrButtons
