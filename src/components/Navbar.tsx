@@ -67,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
               <a href="#projects" className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>Our work</li>
               </a>
-              <a href={`${constantsLinks}/pulse`}  className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
+              <a href={`${constantsLinks}/news`}  className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
                 <li>News</li>
               </a>
               <a href={`${constantsLinks}/about`}  className='px-6 py-2 hover:text-AdBlue transition-all duration-300'>
@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
             </a>
             
             <a 
-              href={`${constantsLinks}/pulse`} 
+              href={`${constantsLinks}/news`} 
               className={`block hover:text-AdBlue hover:scale-110 delay-[500ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}
               onClick={() => setCheck(false)}
             >

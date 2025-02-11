@@ -17,7 +17,7 @@ const Footer: react.FC = () => {
                <a href='#projects' className='font-bold truncate'>
                  <li>Our Work</li>
                </a>
-                <a href={`${constantsLinks}/pulse`} className='font-bold'>
+                <a href={`${constantsLinks}/news`} className='font-bold'>
                  <li>News</li>
                </a>
                <a href={`${constantsLinks}/about`} className='font-bold'>
