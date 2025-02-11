@@ -1,4 +1,5 @@
 ---
+import { constantsLinks } from '@/data/contanstLinks';
 import { ArrButtons } from './ArrButtons';
 ---
 
@@ -7,7 +8,7 @@ import { ArrButtons } from './ArrButtons';
 
 >
   <a 
-    href="https://staging.adviters.com/careers-jobs/" 
+    href={`${constantsLinks}/careers-jobs/`} 
     class='max-w-screen-lg mx-auto group hover:cursor-pointer'>
     <div
       class='p-12 border-2 border-AdBlue preTitle backdrop-blur-xl relative z-10  '
