@@ -40,7 +40,7 @@ const SlideProject: React.FC<SlideProjectProps> = ({ dataProject }) => {
           autoplay={{  
             delay: 8000,  
             disableOnInteraction: false,  
-        }}  
+          }}  
         >
           {dataProject.map((projectOne, index) => (
             <SwiperSlide key={projectOne.id} className="px-4 pb-[50px]">

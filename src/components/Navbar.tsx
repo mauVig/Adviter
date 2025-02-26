@@ -123,7 +123,6 @@ const Navbar: React.FC<NavbarProps> = ({ currentIcon }) => {
             >
               <li>Our work</li>
             </a>
-            
             <a 
               href={`${constantsLinks}/news`} 
               className={`block hover:text-AdBlue hover:scale-110 delay-[500ms] transition-all ease-in-out ${check ? 'opacity-100 translate-x-0' : 'duration-500 opacity-0 translate-x-10'}`}

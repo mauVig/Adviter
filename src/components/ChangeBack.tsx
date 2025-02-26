@@ -109,10 +109,7 @@ const ChangeBack = () => {
           />
         ))}
       </div>
-      {/* <section 
-        ref={sectionRef}
-        className="text-textGray text-center min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10 mb-64"
-      > */}
+
       <section 
         ref={sectionRef}
         className="text-textGray text-center pt-16 min-h-[50vh] md:min-h-screen flex items-center font-bold max-w-screen-xl mx-auto relative px-10 mb-64"
